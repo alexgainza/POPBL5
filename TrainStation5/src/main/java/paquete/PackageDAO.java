@@ -15,7 +15,7 @@ public class PackageDAO {
 	public Package add(Package paquete) {
 		Session session = HibernateUtil.createSessionFactory();
 		session.beginTransaction();
-		session.saveOrUpdate(paquete);;
+		session.save(paquete);
 		session.getTransaction().commit();
 		session.close();
 		return paquete;

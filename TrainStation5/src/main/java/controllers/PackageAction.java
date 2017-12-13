@@ -36,6 +36,13 @@ public class PackageAction extends ActionSupport {
 		try {
 			Package paquete = getPaquete();
 			System.out.println(paquete.getPackageID());
+			System.out.println(paquete.getDescription());
+			System.out.println(paquete.getPackageStateID());
+			System.out.println(paquete.getUserID());
+			System.out.println(paquete.getTrainID());
+			System.out.println(paquete.getOriginStationID());
+			System.out.println(paquete.getDestinationStationID());
+			System.out.println(paquete.getSendDate());
 			packageDAO.add(paquete);
 		} catch (Exception e) {
 			e.printStackTrace();
