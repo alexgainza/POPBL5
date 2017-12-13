@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,19 +15,20 @@ import train.Train;
 
 @SuppressWarnings("serial")
 @Entity
+@Table(name = "Package")
 public class Package implements Serializable {
 
 	private int packageID;
 	private String description;
 	private int packageStateID;
 	private int userID;
-	private Train train;
-	private Station originStation;
-	private Station destinationStation;
+	private int train;
+	private int originStation;
+	private int destinationStation;
 	private Date sendDate;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getPackageID() {
 		return packageID;
 	}
@@ -59,27 +61,27 @@ public class Package implements Serializable {
 		this.userID = userID;
 	}
 
-	public Train getTrain() {
+	public int getTrain() {
 		return train;
 	}
 
-	public void setTrainID(Train train) {
+	public void setTrain(int train) {
 		this.train = train;
 	}
 
-	public Station getOriginStation() {
+	public int getOriginStation() {
 		return originStation;
 	}
 
-	public void setOriginStation(Station originStation) {
+	public void setOriginStation(int originStation) {
 		this.originStation = originStation;
 	}
 
-	public Station getDestinationStation() {
+	public int getDestinationStation() {
 		return destinationStation;
 	}
 
-	public void setDestinationStation(Station destinationStation) {
+	public void setDestinationStation(int destinationStation) {
 		this.destinationStation = destinationStation;
 	}
 

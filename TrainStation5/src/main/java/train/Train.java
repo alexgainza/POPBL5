@@ -14,6 +14,7 @@ import station.Station;
 
 @SuppressWarnings("serial")
 @Entity
+@Table(name = "Train")
 public class Train implements Serializable {
 
 	private int trainID;

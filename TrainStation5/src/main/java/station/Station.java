@@ -11,6 +11,7 @@ import javax.persistence.Table;
 
 @SuppressWarnings("serial")
 @Entity
+@Table(name = "Station")
 public class Station implements Serializable {
 
 	private int stationID;

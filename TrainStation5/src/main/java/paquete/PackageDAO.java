@@ -25,8 +25,8 @@ public class PackageDAO {
 	public Package delete(int id) {
 		Session session = HibernateUtil.createSessionFactory();
 		session.beginTransaction();
-		Package paquete = (Package) session.load(Package.class, id);
-		if (null != paquete) {
+		Package paquete = session.get(Package.class, id);
+		if (paquete != null) {
 			session.delete(paquete);
 		}
 		session.getTransaction().commit();
@@ -38,9 +38,7 @@ public class PackageDAO {
 	// list.
 	@SuppressWarnings("unchecked")
 	public List<Package> list() {
-		//Session session = HibernateUtil.createSessionFactory();
-		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-		Session session = sessionFactory.openSession();
+		Session session = HibernateUtil.createSessionFactory();
 		session.beginTransaction();
 		List<Package> packages = null;
 		try {

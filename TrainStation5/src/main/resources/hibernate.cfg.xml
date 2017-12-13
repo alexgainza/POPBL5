@@ -11,7 +11,7 @@
 			com.mysql.jdbc.Driver
 		</property>
 		<property name="hibernate.connection.url">
-			jdbc:mysql://localhost:3306/trainstation5
+			jdbc:mysql://localhost:3306/ts5
 		</property>
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">root</property>
@@ -19,7 +19,7 @@
 		<property name="hibernate.connection.pool_size">100</property>
 
 		<property name="hibernate.dialect">
-			org.hibernate.dialect.MySQLDialect
+			org.hibernate.dialect.MySQL5InnoDBDialect
 		</property>
 
 		<!-- Enable Hibernate's automatic session context management -->
@@ -38,5 +38,4 @@
 		<mapping class="train.Train" />
 
 	</session-factory>
-
 </hibernate-configuration>
