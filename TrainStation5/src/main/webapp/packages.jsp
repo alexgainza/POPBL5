@@ -10,13 +10,10 @@
 	<s:actionerror />
 
 	<s:form action="add" method="post">
-		<s:textfield name="paquete.description" label="description" />
-		<s:textfield name="paquete.packageStateID" label="packagestateID" />
-		<s:textfield name="paquete.userID" label="userID" />
-		<s:textfield name="paquete.train" label="train" />
-		<s:textfield name="paquete.originStation" label="originStation" />
-		<s:textfield name="paquete.destinationStation" label="destinationStation" />
-		<s:textfield name="paquete.sendDate" label="sendDate" />
+		<s:textfield name="paquete.description" label="Description" />
+		<s:textfield name="paquete.originStation" label="Origin Station" />
+		<s:textfield name="paquete.destinationStation" label="Destination Station" />
+		<s:textfield name="paquete.sendDate" label="Send Date" />
 
 		<s:submit value="Add Package" align="center" />
 	</s:form>
@@ -28,26 +25,27 @@
 	<h2>Packages in Master</h2>
 	<table border="1">
 		<tr>
-			<th>packageID</th>
-			<th>description</th>
-			<th>packageStateID</th>
-			<th>userID</th>
-			<th>train</th>
-			<th>originStation</th>
-			<th>destinationStation</th>
-			<th>sendDate</th>
+			<th>PackageID</th>
+			<th>Description</th>
+			<th>Package State</th>
+			<th>User</th>
+			<th>Train</th>
+			<th>Origin Station</th>
+			<th>Destination Station</th>
+			<th>Send Date</th>
 		</tr>
 		<s:iterator value="packageList" var="packages">
 			<tr>
 				<td><s:property value="packageID" /></td>
 				<td><s:property value="description" /></td>
-				<td><s:property value="packageStateID" /></td>
+				<td><s:property value="packageState" /></td>
 				<td><s:property value="userID" /></td>
 				<td><s:property value="train" /></td>
 				<td><s:property value="originStation" /></td>
 				<td><s:property value="destinationStation" /></td>
 				<td><s:property value="sendDate" /></td>
 				<td><a href="delete?id=<s:property value="packageID"/>">delete</a></td>
+				<td><a href="update.jsp">edit</a></td>
 			</tr>
 		</s:iterator>
 	</table>
@@ -57,13 +55,13 @@
 	</s:form>
 	<table border="1">
 		<tr>
-			<th>trainID</th>
-			<th>station</th>
-			<th>nextStation</th>
-			<th>direction</th>
-			<th>origin</th>
-			<th>destination</th>
-			<th>onGoing</th>
+			<th>Train</th>
+			<th>Station</th>
+			<th>Next Station</th>
+			<th>Direction</th>
+			<th>Origin</th>
+			<th>Destination</th>
+			<th>OnGoing</th>
 		</tr>
 		<s:iterator value="trainList" var="trains">
 			<tr>

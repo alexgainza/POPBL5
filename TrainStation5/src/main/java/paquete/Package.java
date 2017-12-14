@@ -3,15 +3,11 @@ package paquete;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import station.Station;
-import train.Train;
 
 @SuppressWarnings("serial")
 @Entity
@@ -20,7 +16,7 @@ public class Package implements Serializable {
 
 	private int packageID;
 	private String description;
-	private int packageStateID;
+	private int packageState;
 	private int userID;
 	private int train;
 	private int originStation;
@@ -45,12 +41,12 @@ public class Package implements Serializable {
 		this.description = description;
 	}
 
-	public int getPackageStateID() {
-		return packageStateID;
+	public int getPackageState() {
+		return packageState;
 	}
 
-	public void setPackageStateID(int packageStateID) {
-		this.packageStateID = packageStateID;
+	public void setPackageState(int packageState) {
+		this.packageState = packageState;
 	}
 
 	public int getUserID() {

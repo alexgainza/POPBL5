@@ -19,11 +19,11 @@
 			<result name="input" type="chain">index</result>
 		</action>
 
-		<action name="delete" class="controllers.PackageAction" method="edit">
+		<action name="delete" class="controllers.PackageAction" method="delete">
 			<result name="success" type="chain">index</result>
 		</action>
 
-		<action name="delete" class="controllers.PackageAction" method="delete">
+		<action name="edit" class="controllers.PackageAction" method="edit">
 			<result name="success" type="chain">index</result>
 		</action>
 

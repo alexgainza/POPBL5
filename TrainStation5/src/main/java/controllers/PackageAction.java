@@ -49,8 +49,12 @@ public class PackageAction extends ActionSupport {
 	}
 
 	public String delete() {
-		System.out.println(getId());
 		packageDAO.delete(getId());
+		return SUCCESS;
+	}
+	
+	public String edit() {
+		packageDAO.edit(getPaquete(), getPaquete().getPackageID());
 		return SUCCESS;
 	}
 
