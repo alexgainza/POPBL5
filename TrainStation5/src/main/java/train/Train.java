@@ -5,70 +5,81 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import station.Station;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name="Train")
+@Table(name = "Train")
 public class Train implements Serializable {
-	
+
 	private int trainID;
-	private int stationID;
-	private int nextStationID;
+	@OneToOne
+	private Station station;
+	private Station nextStation;
 	private String direction;
-	private String origin;
-	private String destination;
+	private Station origin;
+	private Station destination;
 	private boolean onGoing;
-	
+
 	@Id
-	@GeneratedValue
-	@Column(name="trainID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getTrainID() {
 		return trainID;
 	}
+
 	public void setTrainID(int trainID) {
 		this.trainID = trainID;
 	}
-	@Column(name="stationID")
-	public int getStationID() {
-		return stationID;
+
+	public Station getStation() {
+		return station;
 	}
-	public void setStationID(int stationID) {
-	this.stationID = stationID;
+
+	public void setStation(Station station) {
+		this.station = station;
 	}
-	@Column(name="nextStationID")
-	public int getNextStationID() {
-		return nextStationID;
+
+	public Station getNextStation() {
+		return nextStation;
 	}
-	public void setNextStationID(int nextStationID) {
-	this.nextStationID = nextStationID;
+
+	public void setNextStation(Station nextStation) {
+		this.nextStation = nextStation;
 	}
-	@Column(name="direction")
+
 	public String getDirection() {
 		return direction;
 	}
+
 	public void setDirection(String direction) {
 		this.direction = direction;
 	}
-	@Column(name="origin")
-	public String getOrigin() {
+
+	public Station getOrigin() {
 		return origin;
 	}
-	public void setOrigin(String origin) {
+
+	public void setOrigin(Station origin) {
 		this.origin = origin;
 	}
-	@Column(name="destination")
-	public String geDestination() {
+
+	public Station geDestination() {
 		return destination;
 	}
-	public void setDestination(String destination) {
+
+	public void setDestination(Station destination) {
 		this.destination = destination;
 	}
-	@Column(name="onGoing")
+
 	public boolean getOnGoing() {
 		return onGoing;
 	}
+
 	public void setOnGoing(boolean onGoing) {
 		this.onGoing = onGoing;
 	}
