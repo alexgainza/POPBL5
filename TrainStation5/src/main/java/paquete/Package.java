@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @SuppressWarnings("serial")
@@ -16,7 +17,9 @@ public class Package implements Serializable {
 
 	private int packageID;
 	private String description;
+	@OneToOne
 	private int packageState;
+	@OneToOne
 	private int userID;
 	private int train;
 	private int originStation;

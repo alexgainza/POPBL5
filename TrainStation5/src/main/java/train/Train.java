@@ -6,23 +6,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import station.Station;
 
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "Train")
 public class Train implements Serializable {
 
+	@OneToMany
 	private int trainID;
 	@OneToOne
-	private Station station;
-	private Station nextStation;
+	private int station;
+	@OneToOne
+	private int rail;
 	private String direction;
-	private Station origin;
-	private Station destination;
+	private int origin;
+	private int destination;
 	private boolean onGoing;
 
 	@Id
@@ -35,20 +36,20 @@ public class Train implements Serializable {
 		this.trainID = trainID;
 	}
 
-	public Station getStation() {
+	public int getStation() {
 		return station;
 	}
 
-	public void setStation(Station station) {
+	public void setStation(int station) {
 		this.station = station;
 	}
 
-	public Station getNextStation() {
-		return nextStation;
+	public int getRail() {
+		return rail;
 	}
 
-	public void setNextStation(Station nextStation) {
-		this.nextStation = nextStation;
+	public void setRail(int rail) {
+		this.rail = rail;
 	}
 
 	public String getDirection() {
@@ -59,19 +60,19 @@ public class Train implements Serializable {
 		this.direction = direction;
 	}
 
-	public Station getOrigin() {
+	public int getOrigin() {
 		return origin;
 	}
 
-	public void setOrigin(Station origin) {
+	public void setOrigin(int origin) {
 		this.origin = origin;
 	}
 
-	public Station geDestination() {
+	public int getDestination() {
 		return destination;
 	}
 
-	public void setDestination(Station destination) {
+	public void setDestination(int destination) {
 		this.destination = destination;
 	}
 
