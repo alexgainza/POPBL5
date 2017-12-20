@@ -26,13 +26,19 @@
 		<action name="edit" class="controllers.PackageAction" method="edit">
 			<result name="success" type="chain">index</result>
 		</action>
+		
+		<action name="mapa" class="controllers.MapaAction" method="execute">
+			<result name="success">mapa.jsp</result>
+		</action>
 
 		<action name="list1" class="controllers.PackageAction" method="list">
 			<result name="success" type="chain">index</result>
 		</action>
+		
 		<action name="list2" class="controllers.TrainAction" method="list">
 			<result name="success" type="chain">index</result>
 		</action>
+		
 		<action name="index" class="controllers.PackageAction">
 			<result name="input">/packages.jsp</result>
 			<result name="success">packages.jsp</result>

@@ -14,7 +14,7 @@ public class PackageAction extends ActionSupport {
 	private List<Package> packageList;
 	private int id;
 	private PackageDAO packageDAO;
-	
+
 	public Package getPaquete() {
 		return paquete;
 	}
@@ -24,7 +24,7 @@ public class PackageAction extends ActionSupport {
 	}
 
 	public PackageAction() {
-	packageDAO = new PackageDAO();
+		packageDAO = new PackageDAO();
 	}
 
 	public String execute() {
@@ -52,7 +52,7 @@ public class PackageAction extends ActionSupport {
 		packageDAO.delete(getId());
 		return SUCCESS;
 	}
-	
+
 	public String edit() {
 		packageDAO.edit(getPaquete(), getPaquete().getPackageID());
 		return SUCCESS;

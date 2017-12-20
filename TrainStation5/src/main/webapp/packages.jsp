@@ -17,7 +17,11 @@
 
 		<s:submit value="Add Package" align="center" />
 	</s:form>
-
+	
+	<s:form action="mapa" method="post">
+		<s:submit value="Ver mapa" align="center" />
+	</s:form>
+	
 	<s:form action="list1" method="post">
 		<s:submit value="List packages" align="center" />
 	</s:form>
