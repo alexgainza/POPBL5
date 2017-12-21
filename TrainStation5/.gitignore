@@ -2,7 +2,7 @@
 .classpath
 .project
 .settings/
-hibernate.cfg.xml
+*.cfg.xml
 *.png
 *.css
 *.html

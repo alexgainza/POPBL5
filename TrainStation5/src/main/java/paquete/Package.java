@@ -10,21 +10,35 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@SuppressWarnings("serial")
+import station.Station;
+
 @Entity
 @Table(name = "Package")
 public class Package implements Serializable {
 
+	private static final int serialVersionUID = 1;
+
+	@OneToOne
 	private int packageID;
+	private Station origin;
+	private Station destination;
 	private String description;
 	@OneToOne
 	private int packageState;
-	@OneToOne
-	private int userID;
-	private int train;
-	private int originStation;
-	private int destinationStation;
 	private Date sendDate;
+	private boolean asignadoTren;
+
+	public Package() {
+	}
+
+	public Package(Station origin, Station destination, String description) {
+		this.origin = origin;
+		this.destination = destination;
+		this.description = description;
+		this.sendDate = null;
+		this.packageState = 0;
+		this.asignadoTren = false;
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,6 +48,22 @@ public class Package implements Serializable {
 
 	public void setPackageID(int packageID) {
 		this.packageID = packageID;
+	}
+
+	public Station getOrigin() {
+		return origin;
+	}
+
+	public void setOrigin(Station origin) {
+		this.origin = origin;
+	}
+
+	public Station getDestination() {
+		return destination;
+	}
+
+	public void setDestination(Station destination) {
+		this.destination = destination;
 	}
 
 	public String getDescription() {
@@ -52,43 +82,19 @@ public class Package implements Serializable {
 		this.packageState = packageState;
 	}
 
-	public int getUserID() {
-		return userID;
-	}
-
-	public void setUserID(int userID) {
-		this.userID = userID;
-	}
-
-	public int getTrain() {
-		return train;
-	}
-
-	public void setTrain(int train) {
-		this.train = train;
-	}
-
-	public int getOriginStation() {
-		return originStation;
-	}
-
-	public void setOriginStation(int originStation) {
-		this.originStation = originStation;
-	}
-
-	public int getDestinationStation() {
-		return destinationStation;
-	}
-
-	public void setDestinationStation(int destinationStation) {
-		this.destinationStation = destinationStation;
-	}
-
 	public Date getSendDate() {
 		return sendDate;
 	}
 
 	public void setSendDate(Date sendDate) {
 		this.sendDate = sendDate;
+	}
+
+	public boolean isAsignadoTren() {
+		return asignadoTren;
+	}
+
+	public void setAsignadoTren(boolean asignadoTren) {
+		this.asignadoTren = asignadoTren;
 	}
 }

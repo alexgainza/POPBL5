@@ -1,7 +1,9 @@
 package train;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,21 +12,36 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@SuppressWarnings("serial")
+import paquete.Package;
+import rail.Rail;
+import station.Station;
+
 @Entity
 @Table(name = "Train")
 public class Train implements Serializable {
 
+	private static final int serialVersionUID = 4;
+
 	@OneToMany
 	private int trainID;
 	@OneToOne
-	private int station;
+	private Station station;
 	@OneToOne
-	private int rail;
-	private String direction;
-	private int origin;
-	private int destination;
+	private Rail rail;
+	private int direction;
+	@ElementCollection
+	private ArrayList<Package> packageList;
 	private boolean onGoing;
+
+	public Train() {
+	}
+
+	public Train(int trainID, Station station, int direction) {
+		this.trainID = trainID;
+		this.station = station;
+		this.direction = direction;
+		this.packageList = new ArrayList<Package>();
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,47 +53,39 @@ public class Train implements Serializable {
 		this.trainID = trainID;
 	}
 
-	public int getStation() {
+	public Station getStation() {
 		return station;
 	}
 
-	public void setStation(int station) {
+	public void setStation(Station station) {
 		this.station = station;
 	}
 
-	public int getRail() {
+	public Rail getRail() {
 		return rail;
 	}
 
-	public void setRail(int rail) {
+	public void setRail(Rail rail) {
 		this.rail = rail;
 	}
 
-	public String getDirection() {
+	public int getDirection() {
 		return direction;
 	}
 
-	public void setDirection(String direction) {
+	public void setDirection(int direction) {
 		this.direction = direction;
 	}
 
-	public int getOrigin() {
-		return origin;
+	public ArrayList<Package> getPackageList() {
+		return packageList;
 	}
 
-	public void setOrigin(int origin) {
-		this.origin = origin;
+	public void setPackageList(ArrayList<Package> packageList) {
+		this.packageList = packageList;
 	}
 
-	public int getDestination() {
-		return destination;
-	}
-
-	public void setDestination(int destination) {
-		this.destination = destination;
-	}
-
-	public boolean getOnGoing() {
+	public boolean isOnGoing() {
 		return onGoing;
 	}
 

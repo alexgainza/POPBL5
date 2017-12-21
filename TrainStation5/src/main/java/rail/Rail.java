@@ -9,43 +9,63 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@SuppressWarnings("serial")
+import station.Station;
+
 @Entity
 @Table(name = "Rail")
 public class Rail implements Serializable {
+
+	private static final int serialVersionUID = 2;
 
 	@OneToOne
 	private int railID;
 	private boolean occupied;
 	@OneToOne
-	private int previousStationID;
+	private Station previousStation;
 	@OneToOne
-	private int nextStationID;
-	
+	private Station nextStation;
+
+	public Rail() {
+	}
+
+	public Rail(int railID, Station previousStation, Station nextStation, boolean occupied) {
+		this.railID = railID;
+		this.previousStation = previousStation;
+		this.nextStation = nextStation;
+		this.occupied = occupied;
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getRailID() {
 		return railID;
 	}
+
 	public void setRailID(int railID) {
 		this.railID = railID;
 	}
+
 	public boolean isOccupied() {
 		return occupied;
 	}
+
 	public void setOccupied(boolean occupied) {
 		this.occupied = occupied;
 	}
-	public int getPreviousStationID() {
-		return previousStationID;
+
+	public Station getPreviousStation() {
+		return previousStation;
 	}
-	public void setPreviousStationID(int previousStationID) {
-		this.previousStationID = previousStationID;
+
+	public void setPreviousStation(Station previousStation) {
+		this.previousStation = previousStation;
 	}
-	public int getNextStationID() {
-		return nextStationID;
+
+	public Station getNextStation() {
+		return nextStation;
 	}
-	public void setNextStationID(int nextStationID) {
-		this.nextStationID = nextStationID;
+
+	public void setNextStation(Station nextStation) {
+		this.nextStation = nextStation;
 	}
 }
