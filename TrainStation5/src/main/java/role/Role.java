@@ -14,6 +14,8 @@ import javax.persistence.Table;
 @Table(name = "Role")
 public class Role implements Serializable {
 
+	private static final int serialVersionUID = 6;
+	
 	@OneToMany
 	private int roleID;
 	private String description;

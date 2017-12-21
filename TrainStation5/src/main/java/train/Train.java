@@ -3,6 +3,7 @@ package train;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -53,6 +54,7 @@ public class Train implements Serializable {
 		this.trainID = trainID;
 	}
 
+	@Column(name = "station", columnDefinition = "longblob")
 	public Station getStation() {
 		return station;
 	}
@@ -61,6 +63,7 @@ public class Train implements Serializable {
 		this.station = station;
 	}
 
+	@Column(name = "rail", columnDefinition = "longblob")
 	public Rail getRail() {
 		return rail;
 	}
@@ -77,6 +80,7 @@ public class Train implements Serializable {
 		this.direction = direction;
 	}
 
+	@Column(name = "packageList", columnDefinition = "longblob")
 	public ArrayList<Package> getPackageList() {
 		return packageList;
 	}

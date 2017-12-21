@@ -14,6 +14,8 @@ import javax.persistence.Table;
 @Table(name = "PackageState")
 public class PackageState implements Serializable {
 
+	private static final int serialVersionUID = 7;
+	
 	@OneToMany
 	private int packageStateID;
 	private String description;

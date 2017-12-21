@@ -2,6 +2,7 @@ package user;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +18,8 @@ import role.Role;
 @Table(name = "User")
 public class User implements Serializable {
 
+	private static final int serialVersionUID = 5;
+	
 	@OneToMany
 	private int userID;
 	private String nombre;
@@ -68,6 +71,7 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
+	@Column(name = "role", columnDefinition = "longblob")
 	public Role getRole() {
 		return role;
 	}

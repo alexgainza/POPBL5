@@ -3,13 +3,12 @@
 .project
 .settings/
 *.cfg.xml
-*.png
-*.css
-*.html
-*.doxyfile
-*.js
-*.dot
-*.md5
+# *.png
+# *.html
+# *.doxyfile
+# *.js
+# *.dot
+# *.md5
 
 ### Eclipse ###
 

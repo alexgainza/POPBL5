@@ -3,6 +3,7 @@ package station;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -75,6 +76,7 @@ public class Station implements Serializable {
 		this.description = description;
 	}
 
+	@Column(name = "nextStation", columnDefinition = "longblob")
 	public Station getNextStation() {
 		return nextStation;
 	}
@@ -83,6 +85,7 @@ public class Station implements Serializable {
 		this.nextStation = nextStation;
 	}
 
+	@Column(name = "previousStation", columnDefinition = "longblob")
 	public Station getPreviousStation() {
 		return previousStation;
 	}
@@ -123,6 +126,7 @@ public class Station implements Serializable {
 		this.previousEntrySwitch = previousEntrySwitch;
 	}
 
+	@Column(name = "parks", columnDefinition = "longblob")
 	public ArrayList<Train> getParks() {
 		return parks;
 	}
@@ -147,6 +151,7 @@ public class Station implements Serializable {
 		this.coordinatesLng = coordinatesLng;
 	}
 
+	@Column(name = "sendPackageList", columnDefinition = "longblob")
 	public ArrayList<Package> getSendPackageList() {
 		return sendPackageList;
 	}
@@ -155,11 +160,32 @@ public class Station implements Serializable {
 		this.sendPackageList = sendPackageList;
 	}
 
+	@Column(name = "deliveredPackageList", columnDefinition = "longblob")
 	public ArrayList<Package> getDeliveredPackageList() {
 		return deliveredPackageList;
 	}
 
 	public void setDeliveredPackageList(ArrayList<Package> deliveredPackageList) {
 		this.deliveredPackageList = deliveredPackageList;
+	}
+
+	public synchronized int obtenerPaking() {
+
+		int pos = 0;
+
+		for (Train tren : parks) {
+			pos++;
+		}
+		if (pos == 4) {
+			try {
+				System.out.println("Tren bloqueado!");
+				wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return pos;
+
 	}
 }

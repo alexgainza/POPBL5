@@ -2,6 +2,7 @@ package rail;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -53,6 +54,7 @@ public class Rail implements Serializable {
 		this.occupied = occupied;
 	}
 
+	@Column(name = "previousStation", columnDefinition = "longblob")
 	public Station getPreviousStation() {
 		return previousStation;
 	}
@@ -61,6 +63,7 @@ public class Rail implements Serializable {
 		this.previousStation = previousStation;
 	}
 
+	@Column(name = "nextStation", columnDefinition = "longblob")
 	public Station getNextStation() {
 		return nextStation;
 	}

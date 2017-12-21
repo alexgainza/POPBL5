@@ -3,6 +3,7 @@ package paquete;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -50,6 +51,7 @@ public class Package implements Serializable {
 		this.packageID = packageID;
 	}
 
+	@Column(name="origin",columnDefinition="longblob")
 	public Station getOrigin() {
 		return origin;
 	}
@@ -58,6 +60,7 @@ public class Package implements Serializable {
 		this.origin = origin;
 	}
 
+	@Column(name="destination",columnDefinition="longblob")
 	public Station getDestination() {
 		return destination;
 	}
