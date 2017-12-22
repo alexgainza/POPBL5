@@ -16,7 +16,7 @@
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">root</property>
 
-		<property name="hibernate.connection.pool_size">100</property>
+		<property name="hibernate.connection.pool_size">1</property>
 
 		<property name="hibernate.dialect">
 			org.hibernate.dialect.MySQL5InnoDBDialect
@@ -36,7 +36,6 @@
 
 		<mapping class="paquete.Package" />
 		<mapping class="train.Train" />
-		<mapping class="packageState.PackageState" />
 		<mapping class="rail.Rail" />
 		<mapping class="role.Role" />
 		<mapping class="station.Station" />

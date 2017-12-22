@@ -1,16 +1,15 @@
 package train;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import paquete.Package;
@@ -23,15 +22,16 @@ public class Train implements Serializable {
 
 	private static final int serialVersionUID = 4;
 
-	@OneToMany
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int trainID;
-	@OneToOne
+	@ManyToOne
 	private Station station;
-	@OneToOne
+	@ManyToOne
 	private Rail rail;
 	private int direction;
-	@ElementCollection
-	private ArrayList<Package> packageList;
+	@OneToMany
+	private Set<Package> packageList;
 	private boolean onGoing;
 
 	public Train() {
@@ -41,11 +41,9 @@ public class Train implements Serializable {
 		this.trainID = trainID;
 		this.station = station;
 		this.direction = direction;
-		this.packageList = new ArrayList<Package>();
+		this.packageList = new HashSet<Package>();
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getTrainID() {
 		return trainID;
 	}
@@ -54,7 +52,6 @@ public class Train implements Serializable {
 		this.trainID = trainID;
 	}
 
-	@Column(name = "station", columnDefinition = "longblob")
 	public Station getStation() {
 		return station;
 	}
@@ -63,7 +60,6 @@ public class Train implements Serializable {
 		this.station = station;
 	}
 
-	@Column(name = "rail", columnDefinition = "longblob")
 	public Rail getRail() {
 		return rail;
 	}
@@ -80,12 +76,11 @@ public class Train implements Serializable {
 		this.direction = direction;
 	}
 
-	@Column(name = "packageList", columnDefinition = "longblob")
-	public ArrayList<Package> getPackageList() {
+	public Set<Package> getPackageList() {
 		return packageList;
 	}
 
-	public void setPackageList(ArrayList<Package> packageList) {
+	public void setPackageList(Set<Package> packageList) {
 		this.packageList = packageList;
 	}
 

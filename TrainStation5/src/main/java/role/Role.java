@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @SuppressWarnings("serial")
@@ -16,7 +15,6 @@ public class Role implements Serializable {
 
 	private static final int serialVersionUID = 6;
 	
-	@OneToMany
 	private int roleID;
 	private String description;
 	

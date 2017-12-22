@@ -8,9 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
 import station.Station;
 
 @Entity
@@ -18,17 +18,20 @@ import station.Station;
 public class Package implements Serializable {
 
 	private static final int serialVersionUID = 1;
-
-	@OneToOne
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int packageID;
+	@ManyToOne
 	private Station origin;
+	@ManyToOne
 	private Station destination;
 	private String description;
-	@OneToOne
 	private int packageState;
 	private Date sendDate;
 	private boolean asignadoTren;
 
+	
 	public Package() {
 	}
 
@@ -41,8 +44,7 @@ public class Package implements Serializable {
 		this.asignadoTren = false;
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	public int getPackageID() {
 		return packageID;
 	}
@@ -51,7 +53,6 @@ public class Package implements Serializable {
 		this.packageID = packageID;
 	}
 
-	@Column(name="origin",columnDefinition="longblob")
 	public Station getOrigin() {
 		return origin;
 	}
@@ -60,7 +61,6 @@ public class Package implements Serializable {
 		this.origin = origin;
 	}
 
-	@Column(name="destination",columnDefinition="longblob")
 	public Station getDestination() {
 		return destination;
 	}

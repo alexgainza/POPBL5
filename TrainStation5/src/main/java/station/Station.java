@@ -2,13 +2,17 @@ package station;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -22,23 +26,24 @@ public class Station implements Serializable {
 
 	private static final int serialVersionUID = 3;
 
-	@OneToMany
 	private int stationID;
 	private String description;
+	@ManyToOne
 	private Station nextStation;
+	@ManyToOne
 	private Station previousStation;
 	private int nextExitSwitch;
 	private int previousExitSwitch;
 	private int nextEntrySwitch;
 	private int previousEntrySwitch;
-	@ElementCollection
-	private ArrayList<Train> parks;
+	@ManyToOne
+	private Collection<Train> parks;
 	private double coordinatesLat;
 	private double coordinatesLng;
-	@ElementCollection
-	private ArrayList<Package> sendPackageList;
-	@ElementCollection
-	private ArrayList<Package> deliveredPackageList;
+	@ManyToOne
+	private Collection<Package> sendPackageList;
+	@ManyToOne
+	private Collection<Package> deliveredPackageList;
 
 	public Station() {
 	}
@@ -76,7 +81,6 @@ public class Station implements Serializable {
 		this.description = description;
 	}
 
-	@Column(name = "nextStation", columnDefinition = "longblob")
 	public Station getNextStation() {
 		return nextStation;
 	}
@@ -85,7 +89,6 @@ public class Station implements Serializable {
 		this.nextStation = nextStation;
 	}
 
-	@Column(name = "previousStation", columnDefinition = "longblob")
 	public Station getPreviousStation() {
 		return previousStation;
 	}
@@ -126,12 +129,11 @@ public class Station implements Serializable {
 		this.previousEntrySwitch = previousEntrySwitch;
 	}
 
-	@Column(name = "parks", columnDefinition = "longblob")
-	public ArrayList<Train> getParks() {
+	public Collection<Train> getParks() {
 		return parks;
 	}
 
-	public void setParks(ArrayList<Train> parks) {
+	public void setParks(Collection<Train> parks) {
 		this.parks = parks;
 	}
 
@@ -151,41 +153,19 @@ public class Station implements Serializable {
 		this.coordinatesLng = coordinatesLng;
 	}
 
-	@Column(name = "sendPackageList", columnDefinition = "longblob")
-	public ArrayList<Package> getSendPackageList() {
+	public Collection<Package> getSendPackageList() {
 		return sendPackageList;
 	}
 
-	public void setSendPackageList(ArrayList<Package> sendPackageList) {
+	public void setSendPackageList(Collection<Package> sendPackageList) {
 		this.sendPackageList = sendPackageList;
 	}
 
-	@Column(name = "deliveredPackageList", columnDefinition = "longblob")
-	public ArrayList<Package> getDeliveredPackageList() {
+	public Collection<Package> getDeliveredPackageList() {
 		return deliveredPackageList;
 	}
 
-	public void setDeliveredPackageList(ArrayList<Package> deliveredPackageList) {
+	public void setDeliveredPackageList(Collection<Package> deliveredPackageList) {
 		this.deliveredPackageList = deliveredPackageList;
-	}
-
-	public synchronized int obtenerPaking() {
-
-		int pos = 0;
-
-		for (Train tren : parks) {
-			pos++;
-		}
-		if (pos == 4) {
-			try {
-				System.out.println("Tren bloqueado!");
-				wait();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		return pos;
-
 	}
 }

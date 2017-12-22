@@ -7,8 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import role.Role;
@@ -20,17 +19,16 @@ public class User implements Serializable {
 
 	private static final int serialVersionUID = 5;
 	
-	@OneToMany
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int userID;
 	private String nombre;
 	private String apellido;
 	private String username;
 	private String password;
-	@OneToOne
+	@ManyToOne
 	private Role role;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getUserID() {
 		return userID;
 	}

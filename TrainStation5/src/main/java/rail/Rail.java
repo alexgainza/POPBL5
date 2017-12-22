@@ -2,12 +2,11 @@ package rail;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import station.Station;
@@ -18,12 +17,13 @@ public class Rail implements Serializable {
 
 	private static final int serialVersionUID = 2;
 
-	@OneToOne
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int railID;
 	private boolean occupied;
-	@OneToOne
+	@ManyToOne
 	private Station previousStation;
-	@OneToOne
+	@ManyToOne
 	private Station nextStation;
 
 	public Rail() {
@@ -36,8 +36,6 @@ public class Rail implements Serializable {
 		this.occupied = occupied;
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getRailID() {
 		return railID;
 	}
@@ -54,7 +52,6 @@ public class Rail implements Serializable {
 		this.occupied = occupied;
 	}
 
-	@Column(name = "previousStation", columnDefinition = "longblob")
 	public Station getPreviousStation() {
 		return previousStation;
 	}
@@ -63,7 +60,6 @@ public class Rail implements Serializable {
 		this.previousStation = previousStation;
 	}
 
-	@Column(name = "nextStation", columnDefinition = "longblob")
 	public Station getNextStation() {
 		return nextStation;
 	}
