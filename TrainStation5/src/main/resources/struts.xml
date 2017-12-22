@@ -8,7 +8,16 @@
 	<constant name="struts.devMode" value="false" />
 	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
 
-	<package name="default" extends="struts-default" namespace="/">
+	<package name="json-default-package" extends="struts-default">
+		<result-types>
+			<result-type name="json" class="org.apache.struts2.json.JSONResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="json"
+				class="org.apache.struts2.json.JSONInterceptor" />
+		</interceptors>
+	</package>
+	<package name="default" extends="struts-default,json-default-package" namespace="/">
 		<action name="login" class="controllers.LoginAction">
 			<result name="success">packages.jsp</result>
 			<result name="error">index.jsp</result>
@@ -26,7 +35,7 @@
 		<action name="edit" class="controllers.PackageAction" method="edit">
 			<result name="success" type="chain">index</result>
 		</action>
-		
+
 		<action name="mapa" class="controllers.MapaAction" method="execute">
 			<result name="success">mapa.jsp</result>
 		</action>
@@ -34,14 +43,18 @@
 		<action name="list1" class="controllers.PackageAction" method="list">
 			<result name="success" type="chain">index</result>
 		</action>
-		
+
 		<action name="list2" class="controllers.TrainAction" method="list">
 			<result name="success" type="chain">index</result>
 		</action>
-		
+
 		<action name="index" class="controllers.PackageAction">
 			<result name="input">/packages.jsp</result>
 			<result name="success">packages.jsp</result>
 		</action>
+		<action name="JSONAction" class="controllers.JSONAction">
+			<result type="json" />
+		</action>
 	</package>
+
 </struts>
