@@ -12,7 +12,7 @@
 		<dispatcher>FORWARD</dispatcher>
 	</filter-mapping>
 	<welcome-file-list>
-		<welcome-file>mapa.jsp</welcome-file>
+		<welcome-file>packages.jsp</welcome-file>
 	</welcome-file-list>
   
 </web-app>

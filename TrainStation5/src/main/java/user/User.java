@@ -17,6 +17,7 @@ import role.Role;
 @Table(name = "User")
 public class User implements Serializable {
 
+	@SuppressWarnings("unused")
 	private static final int serialVersionUID = 5;
 	
 	@Id

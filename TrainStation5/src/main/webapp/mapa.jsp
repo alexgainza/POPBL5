@@ -4,7 +4,7 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <script>
 	
-<%@include file="JS/jquery-1.7.1.min.js"%>
+<%@include file="js/jquery-1.7.1.min.js"%>
 	
 </script>
 <html>

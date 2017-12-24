@@ -11,10 +11,12 @@ import javax.persistence.Table;
 
 import station.Station;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "Rail")
 public class Rail implements Serializable {
 
+	@SuppressWarnings("unused")
 	private static final int serialVersionUID = 2;
 
 	@Id

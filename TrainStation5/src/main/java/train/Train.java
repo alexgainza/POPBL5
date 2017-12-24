@@ -1,8 +1,8 @@
 package train;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,10 +16,12 @@ import paquete.Package;
 import rail.Rail;
 import station.Station;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "Train")
 public class Train implements Serializable {
 
+	@SuppressWarnings("unused")
 	private static final int serialVersionUID = 4;
 
 	@Id
@@ -31,7 +33,7 @@ public class Train implements Serializable {
 	private Rail rail;
 	private int direction;
 	@OneToMany
-	private Set<Package> packageList;
+	private Collection<Package> packageList = new ArrayList<>();
 	private boolean onGoing;
 
 	public Train() {
@@ -41,7 +43,6 @@ public class Train implements Serializable {
 		this.trainID = trainID;
 		this.station = station;
 		this.direction = direction;
-		this.packageList = new HashSet<Package>();
 	}
 
 	public int getTrainID() {
@@ -76,11 +77,11 @@ public class Train implements Serializable {
 		this.direction = direction;
 	}
 
-	public Set<Package> getPackageList() {
+	public Collection<Package> getPackageList() {
 		return packageList;
 	}
 
-	public void setPackageList(Set<Package> packageList) {
+	public void setPackageList(Collection<Package> packageList) {
 		this.packageList = packageList;
 	}
 

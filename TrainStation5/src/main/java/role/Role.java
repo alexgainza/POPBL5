@@ -13,6 +13,7 @@ import javax.persistence.Table;
 @Table(name = "Role")
 public class Role implements Serializable {
 
+	@SuppressWarnings("unused")
 	private static final int serialVersionUID = 6;
 	
 	private int roleID;

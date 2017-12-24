@@ -3,15 +3,11 @@ package station;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -20,12 +16,16 @@ import paquete.Package;
 import station.Station;
 import train.Train;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "Station")
 public class Station implements Serializable {
 
+	@SuppressWarnings("unused")
 	private static final int serialVersionUID = 3;
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int stationID;
 	private String description;
 	@ManyToOne
@@ -36,14 +36,14 @@ public class Station implements Serializable {
 	private int previousExitSwitch;
 	private int nextEntrySwitch;
 	private int previousEntrySwitch;
-	@ManyToOne
-	private Collection<Train> parks;
+	@OneToMany
+	private Collection<Train> parks = new ArrayList<>();
 	private double coordinatesLat;
 	private double coordinatesLng;
-	@ManyToOne
-	private Collection<Package> sendPackageList;
-	@ManyToOne
-	private Collection<Package> deliveredPackageList;
+	@OneToMany
+	private Collection<Package> sendPackageList = new ArrayList<>();
+	@OneToMany
+	private Collection<Package> deliveredPackageList = new ArrayList<>();
 
 	public Station() {
 	}
@@ -58,13 +58,8 @@ public class Station implements Serializable {
 		this.previousEntrySwitch = previousEntrySwitch;
 		this.coordinatesLat = coordinatesLat;
 		this.coordinatesLng = coordinatesLng;
-		this.parks = new ArrayList<Train>();
-		this.sendPackageList = new ArrayList<Package>();
-		this.deliveredPackageList = new ArrayList<Package>();
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getStationID() {
 		return stationID;
 	}
