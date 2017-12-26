@@ -49,7 +49,8 @@ public class Station implements Serializable {
 	}
 
 	public Station(int stationID, String description, int nextExitSwitch, int previousExitSwitch, int nextEntrySwitch,
-			int previousEntrySwitch, double coordinatesLat, double coordinatesLng) {
+			int previousEntrySwitch, double coordinatesLat, double coordinatesLng, Station nextStation,
+			Station previousStation) {
 		this.stationID = stationID;
 		this.description = description;
 		this.nextExitSwitch = nextExitSwitch;
@@ -58,6 +59,8 @@ public class Station implements Serializable {
 		this.previousEntrySwitch = previousEntrySwitch;
 		this.coordinatesLat = coordinatesLat;
 		this.coordinatesLng = coordinatesLng;
+		this.nextStation = nextStation;
+		this.previousStation = previousStation;
 	}
 
 	public int getStationID() {
