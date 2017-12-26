@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
 import hibernate.HibernateUtil;
 
@@ -28,6 +26,19 @@ public class PackageDAO {
 		Package paquete = session.get(Package.class, id);
 		if (paquete != null) {
 			session.delete(paquete);
+		}
+		session.getTransaction().commit();
+		session.close();
+		return paquete;
+	}
+	
+	public Package edit(Package paquete, int id) {
+		Session session = HibernateUtil.createSessionFactory();
+		session.beginTransaction();
+		Package paquete1 = session.get(Package.class, id);
+		paquete1 = paquete;
+		if(paquete1 != null) {
+			session.update(paquete1);
 		}
 		session.getTransaction().commit();
 		session.close();

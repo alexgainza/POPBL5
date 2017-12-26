@@ -1,38 +1,68 @@
 package station;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import paquete.Package;
+import station.Station;
+import train.Train;
 
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "Station")
 public class Station implements Serializable {
 
+	@SuppressWarnings("unused")
+	private static final int serialVersionUID = 3;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int stationID;
 	private String description;
-	private int nextStationID;
-	private int previousStationID;
+	@ManyToOne
+	private Station nextStation;
+	@ManyToOne
+	private Station previousStation;
 	private int nextExitSwitch;
 	private int previousExitSwitch;
 	private int nextEntrySwitch;
 	private int previousEntrySwitch;
-	private int park1;
-	private int park2;
-	private int park3;
-	private int park4;
-	private int nextWaitingZone;
-	private int previousWaitingZone;
-	private float coordinatesLat;
-	private float coordinatesLng;
+	@OneToMany
+	private Collection<Train> parks = new ArrayList<>();
+	private double coordinatesLat;
+	private double coordinatesLng;
+	@OneToMany
+	private Collection<Package> sendPackageList = new ArrayList<>();
+	@OneToMany
+	private Collection<Package> deliveredPackageList = new ArrayList<>();
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Station() {
+	}
+
+	public Station(int stationID, String description, int nextExitSwitch, int previousExitSwitch, int nextEntrySwitch,
+			int previousEntrySwitch, double coordinatesLat, double coordinatesLng, Station nextStation,
+			Station previousStation) {
+		this.stationID = stationID;
+		this.description = description;
+		this.nextExitSwitch = nextExitSwitch;
+		this.previousExitSwitch = previousExitSwitch;
+		this.nextEntrySwitch = nextEntrySwitch;
+		this.previousEntrySwitch = previousEntrySwitch;
+		this.coordinatesLat = coordinatesLat;
+		this.coordinatesLng = coordinatesLng;
+		this.nextStation = nextStation;
+		this.previousStation = previousStation;
+	}
+
 	public int getStationID() {
 		return stationID;
 	}
@@ -49,20 +79,20 @@ public class Station implements Serializable {
 		this.description = description;
 	}
 
-	public int getNextStationID() {
-		return nextStationID;
+	public Station getNextStation() {
+		return nextStation;
 	}
 
-	public void setNextStationID(int nextStationID) {
-		this.nextStationID = nextStationID;
+	public void setNextStation(Station nextStation) {
+		this.nextStation = nextStation;
 	}
 
-	public int getPreviousStationID() {
-		return previousStationID;
+	public Station getPreviousStation() {
+		return previousStation;
 	}
 
-	public void setPreviousStationID(int previousStationID) {
-		this.previousStationID = previousStationID;
+	public void setPreviousStation(Station previousStation) {
+		this.previousStation = previousStation;
 	}
 
 	public int getNextExitSwitch() {
@@ -73,7 +103,7 @@ public class Station implements Serializable {
 		this.nextExitSwitch = nextExitSwitch;
 	}
 
-	public int getSendDate() {
+	public int getPreviousExitSwitch() {
 		return previousExitSwitch;
 	}
 
@@ -97,67 +127,43 @@ public class Station implements Serializable {
 		this.previousEntrySwitch = previousEntrySwitch;
 	}
 
-	public int getPark1() {
-		return park1;
+	public Collection<Train> getParks() {
+		return parks;
 	}
 
-	public void setPark1(int park1) {
-		this.park1 = park1;
+	public void setParks(Collection<Train> parks) {
+		this.parks = parks;
 	}
 
-	public int getPark2() {
-		return park2;
-	}
-
-	public void setPark2(int park2) {
-		this.park2 = park2;
-	}
-
-	public int getPark3() {
-		return park3;
-	}
-
-	public void setPark3(int park3) {
-		this.park3 = park3;
-	}
-
-	public int getPark4() {
-		return park4;
-	}
-
-	public void setPark4(int park4) {
-		this.park4 = park4;
-	}
-
-	public int getNextWaitingZone() {
-		return nextWaitingZone;
-	}
-
-	public void setNextWaitingZone(int nextWaitingZone) {
-		this.nextWaitingZone = nextWaitingZone;
-	}
-
-	public int getPreviousWaitingZone() {
-		return previousWaitingZone;
-	}
-
-	public void setPreviousWaitingZone(int previousWaitingZone) {
-		this.previousWaitingZone = previousWaitingZone;
-	}
-
-	public float getCoordinatesLat() {
+	public double getCoordinatesLat() {
 		return coordinatesLat;
 	}
 
-	public void setCoordinatesLat(float coordinatesLat) {
+	public void setCoordinatesLat(double coordinatesLat) {
 		this.coordinatesLat = coordinatesLat;
 	}
 
-	public float getCoordinatesLng() {
+	public double getCoordinatesLng() {
 		return coordinatesLng;
 	}
 
-	public void setCoordinatesLng(float coordinatesLng) {
+	public void setCoordinatesLng(double coordinatesLng) {
 		this.coordinatesLng = coordinatesLng;
+	}
+
+	public Collection<Package> getSendPackageList() {
+		return sendPackageList;
+	}
+
+	public void setSendPackageList(Collection<Package> sendPackageList) {
+		this.sendPackageList = sendPackageList;
+	}
+
+	public Collection<Package> getDeliveredPackageList() {
+		return deliveredPackageList;
+	}
+
+	public void setDeliveredPackageList(Collection<Package> deliveredPackageList) {
+		this.deliveredPackageList = deliveredPackageList;
 	}
 }

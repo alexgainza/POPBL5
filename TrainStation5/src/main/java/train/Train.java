@@ -1,14 +1,19 @@
 package train;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import paquete.Package;
+import rail.Rail;
 import station.Station;
 
 @SuppressWarnings("serial")
@@ -16,17 +21,30 @@ import station.Station;
 @Table(name = "Train")
 public class Train implements Serializable {
 
-	private int trainID;
-	@OneToOne
-	private Station station;
-	private Station nextStation;
-	private String direction;
-	private Station origin;
-	private Station destination;
-	private boolean onGoing;
+	@SuppressWarnings("unused")
+	private static final int serialVersionUID = 4;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int trainID;
+	@ManyToOne
+	private Station station;
+	@ManyToOne
+	private Rail rail;
+	private int direction;
+	@OneToMany
+	private Collection<Package> packageList = new ArrayList<>();
+	private boolean onGoing;
+
+	public Train() {
+	}
+
+	public Train(int trainID, Station station, int direction) {
+		this.trainID = trainID;
+		this.station = station;
+		this.direction = direction;
+	}
+
 	public int getTrainID() {
 		return trainID;
 	}
@@ -43,39 +61,31 @@ public class Train implements Serializable {
 		this.station = station;
 	}
 
-	public Station getNextStation() {
-		return nextStation;
+	public Rail getRail() {
+		return rail;
 	}
 
-	public void setNextStation(Station nextStation) {
-		this.nextStation = nextStation;
+	public void setRail(Rail rail) {
+		this.rail = rail;
 	}
 
-	public String getDirection() {
+	public int getDirection() {
 		return direction;
 	}
 
-	public void setDirection(String direction) {
+	public void setDirection(int direction) {
 		this.direction = direction;
 	}
 
-	public Station getOrigin() {
-		return origin;
+	public Collection<Package> getPackageList() {
+		return packageList;
 	}
 
-	public void setOrigin(Station origin) {
-		this.origin = origin;
+	public void setPackageList(Collection<Package> packageList) {
+		this.packageList = packageList;
 	}
 
-	public Station geDestination() {
-		return destination;
-	}
-
-	public void setDestination(Station destination) {
-		this.destination = destination;
-	}
-
-	public boolean getOnGoing() {
+	public boolean isOnGoing() {
 		return onGoing;
 	}
 

@@ -2,7 +2,13 @@
 .classpath
 .project
 .settings/
-hibernate.cfg.xml
+*.cfg.xml
+# *.png
+# *.html
+# *.doxyfile
+# *.js
+# *.dot
+# *.md5
 
 ### Eclipse ###
 

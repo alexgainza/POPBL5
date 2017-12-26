@@ -31,6 +31,19 @@ public class StationDAO {
 		session.close();
 		return stations;
 	}
+	
+	public Station edit(Station station, int id) {
+		Session session = HibernateUtil.createSessionFactory();
+		session.beginTransaction();
+		Station station1 = session.get(Station.class, id);
+		station1 = station;
+		if(station1 != null) {
+			session.update(station1);
+		}
+		session.getTransaction().commit();
+		session.close();
+		return station;
+	}
 
 	// For generating , executing hibernate select query and returns packages as a
 	// list.
