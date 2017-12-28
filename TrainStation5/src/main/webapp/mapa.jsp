@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <script>
 	
@@ -130,7 +129,8 @@
 				var stationList = (data.stationList);
 				console.log("antes de colocar");
 				for (var i = 0; i < stationList.length; i++) {
-					console.log("estacion "+i+" latitud: "+stationList[i].coordinatesLat);
+					console.log("estacion " + i + " latitud: "
+							+ stationList[i].coordinatesLat);
 					var markerStation = new google.maps.Marker({
 						position : {
 							lat : stationList[i].coordinatesLat,

@@ -70,7 +70,7 @@
 				<td><s:property value="station.stationID" /></td>
 				<td><s:property value="rail.railID" /></td>
 				<td><s:property value="direction" /></td>
-				<td><s:property value="packageList" /></td>
+				<td><s:property value="packageList.packageID" /></td>
 				<td><s:property value="onGoing" /></td>
 				<td><a href="delete?id=<s:property value="trainID"/>">delete</a></td>
 			</tr>
