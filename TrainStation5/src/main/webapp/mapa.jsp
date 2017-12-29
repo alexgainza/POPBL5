@@ -33,6 +33,7 @@
 		var imageStation = 'images/blue-mark.png';
 		var metro = 0;
 		var dir = 1;
+		var title = '';
 		var maxMetros = 6;
 		var markerTrain;
 		var trainPath = [ {
@@ -94,14 +95,15 @@
 
 			greenMap.setMap(map);
 
-			markerTrain = new google.maps.Marker({
+			/*markerTrain = new google.maps.Marker({
 				position : trainPath[metro],
 				map : map,
 				title : 'Train',
 				icon : imageTrain
-			});
+			});*/
+			getLoad('Train', imageTrain);
 			console.log("llamando a colocar");
-			getLoad();
+			getLoad('Station', imageStation);
 			moveMarkerTrain(map, markerTrain);
 		};
 
@@ -124,7 +126,7 @@
 			}, 100);
 
 		};
-		function getLoad() {
+		function getLoad(title, image) {
 			$.getJSON('JSONAction.action', function(data) {
 				var stationList = (data.stationList);
 				console.log("antes de colocar");
@@ -137,8 +139,8 @@
 							lng : stationList[i].coordinatesLng
 						},
 						map : map,
-						title : 'Station',
-						icon : imageStation
+						title : title,
+						icon : image
 					});
 				}
 				console.log("colocados");

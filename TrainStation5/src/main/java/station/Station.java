@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,21 +29,21 @@ public class Station implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int stationID;
 	private String description;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Station nextStation;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Station previousStation;
 	private int nextExitSwitch;
 	private int previousExitSwitch;
 	private int nextEntrySwitch;
 	private int previousEntrySwitch;
-	@OneToMany
+	@OneToMany(fetch = FetchType.LAZY)
 	private Collection<Train> parks = new ArrayList<>();
 	private double coordinatesLat;
 	private double coordinatesLng;
-	@OneToMany
+	@OneToMany(fetch = FetchType.LAZY)
 	private Collection<Package> sendPackageList = new ArrayList<>();
-	@OneToMany
+	@OneToMany(fetch = FetchType.LAZY)
 	private Collection<Package> deliveredPackageList = new ArrayList<>();
 
 	public Station() {

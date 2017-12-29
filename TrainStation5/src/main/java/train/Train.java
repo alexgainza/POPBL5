@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,12 +28,12 @@ public class Train implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int trainID;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Station station;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Rail rail;
 	private int direction;
-	@OneToMany
+	@OneToMany(fetch = FetchType.LAZY)
 	private Collection<Package> packageList = new ArrayList<>();
 	private boolean onGoing;
 

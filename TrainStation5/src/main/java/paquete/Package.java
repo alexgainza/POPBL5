@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,9 +23,9 @@ public class Package implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int packageID;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Station origin;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Station destination;
 	private String description;
 	private int packageState;

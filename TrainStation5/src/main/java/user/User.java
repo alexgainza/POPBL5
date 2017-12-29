@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,7 +28,7 @@ public class User implements Serializable {
 	private String apellido;
 	private String username;
 	private String password;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Role role;
 
 	public int getUserID() {
