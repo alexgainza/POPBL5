@@ -17,9 +17,14 @@
 				class="org.apache.struts2.json.JSONInterceptor" />
 		</interceptors>
 	</package>
-	<package name="default" extends="struts-default,json-default-package" namespace="/">
+	<package name="default" extends="struts-default,json-default-package"
+		namespace="/">
+		<!--<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>-->
 		<action name="login" class="controllers.LoginAction">
-			<result name="success">packages.jsp</result>
+			<result name="success"> <!--type="tiles"-->packages.jsp</result>
 			<result name="error">index.jsp</result>
 		</action>
 
@@ -56,5 +61,4 @@
 			<result type="json" />
 		</action>
 	</package>
-
 </struts>
