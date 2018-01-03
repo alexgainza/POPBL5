@@ -24,7 +24,9 @@
 				class="org.apache.struts2.views.tiles.TilesResult" />
 		</result-types>-->
 		<action name="login" class="controllers.LoginAction">
-			<result name="success"> <!--type="tiles"-->packages.jsp</result>
+			<result name="PHC"> <!--type="tiles"-->PHC.jsp</result>
+			<result name="Controller"> <!--type="tiles"-->StationController.jsp</result>
+			<result name="Driver"> <!--type="tiles"-->TrainDriver.jsp</result>
 			<result name="error">index.jsp</result>
 		</action>
 

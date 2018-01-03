@@ -1,6 +1,5 @@
 package controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -21,7 +20,15 @@ public class LoginAction extends ActionSupport {
 
 		for (User user : users) {
 			if (this.username.equals(user.getUsername()) && this.password.equals(user.getPassword())) {
-				return "success";
+				if(user.getRole().getRoleID() == 1) {
+					return "PHC";
+				}
+				else if(user.getRole().getRoleID() == 2) {
+					return "Driver";
+				}
+				else if(user.getRole().getRoleID() == 3) {
+					return "Controller";
+				}
 			}
 		}
 		addActionError(getText("error.login"));

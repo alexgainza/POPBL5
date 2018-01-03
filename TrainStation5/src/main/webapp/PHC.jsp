@@ -11,18 +11,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>POPBL5</title>
 <link href="css/c3.min.css" rel="stylesheet" type="text/css" />
-<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/PHC.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 </head>
 <body>
 	<header>
-		<h1>TRAIN STATION 5</h1>
+		<figure>
+			<img src="images/Tren_Inicio.png" id="Tren_Inicio">
+			<img src="images/Titulo_Inicio.png" id="Titulo_Inicio">
+		</figure>
 	</header>
-	<nav>
-		<a href="Mapa.html">Map</a> <a href="Graficos.html">Graphics</a>
-	</nav>
-	<hr></hr>
+	<a href="packages.jsp" id="sendPackage">Send Package</a>
 	<div id="mapaSection">
 		<h2>Train path</h2>
 		<div id="map"></div>
