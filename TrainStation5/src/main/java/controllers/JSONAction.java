@@ -9,7 +9,7 @@ import station.StationDAO;
 public class JSONAction {
 	private List<Station> stationList = new ArrayList<Station>();
 	StationDAO stationDAO = new StationDAO();
-
+	
 	public List<Station> getStationList() {
 		return stationList;
 	}

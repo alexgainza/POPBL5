@@ -95,13 +95,13 @@
 
 			greenMap.setMap(map);
 
-			/*markerTrain = new google.maps.Marker({
+			markerTrain = new google.maps.Marker({
 				position : trainPath[metro],
 				map : map,
 				title : 'Train',
 				icon : imageTrain
-			});*/
-			getLoad('Train', imageTrain);
+			});
+			//getLoad('Train', imageTrain);
 			console.log("llamando a colocar");
 			getLoad('Station', imageStation);
 			moveMarkerTrain(map, markerTrain);
