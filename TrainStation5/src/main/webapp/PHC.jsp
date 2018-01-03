@@ -22,9 +22,25 @@
 			<img src="images/Titulo_Inicio.png" id="Titulo_Inicio">
 		</figure>
 	</header>
-	<a href="packages.jsp" id="sendPackage">Send Package</a>
+	<nav>
+		<a href="packages.jsp" id="sendPackage">Send Package</a>
+	</nav>
 	<div id="mapaSection">
-		<h2>Train path</h2>
+		<div id="trainInfo">
+			<h2>Train information</h2>
+			<span>Train:</span>
+			<input type="radio" name="train" /><label>Train1</label>
+			<input type="radio" name="train" /><label>Train2</label>
+			<input type="radio" name="train" /><label>Train3</label>
+			<input type="radio" name="train" /><label>Train4</label>
+			<input type="radio" name="train" /><label>Train5</label>
+			<input type="radio" name="train" /><label>Train6</label><br>
+			<hr>
+			<p>Station:</p>
+			<p>Rail track:</p>
+			<p>Destination:</p>
+			<p>Nº of packages:</p>
+		</div>
 		<div id="map"></div>
 	</div>
 	<script>
@@ -59,8 +75,8 @@
 			map = new google.maps.Map(document.getElementById('map'), {
 				zoom : 10,
 				center : {
-					lat : 43.1077539,
-					lng : -2.0800512
+					lat : 43.204875467278846,
+					lng : -2.0939938724040985
 				},
 			});
 			var greenLine = [ {
@@ -95,13 +111,13 @@
 
 			greenMap.setMap(map);
 
-			/*markerTrain = new google.maps.Marker({
+			markerTrain = new google.maps.Marker({
 				position : trainPath[metro],
 				map : map,
 				title : 'Train',
 				icon : imageTrain
-			});*/
-			getLoad('Train', imageTrain);
+			});
+			//getLoad('Train', imageTrain);
 			console.log("llamando a colocar");
 			getLoad('Station', imageStation);
 			moveMarkerTrain(map, markerTrain);
