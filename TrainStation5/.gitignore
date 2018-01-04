@@ -2,7 +2,7 @@
 .classpath
 .project
 .settings/
-*.cfg.xml
+hibernate.cfg.xml
 # *.png
 # *.html
 # *.doxyfile

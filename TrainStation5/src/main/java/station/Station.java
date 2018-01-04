@@ -13,6 +13,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import paquete.Package;
 import station.Station;
 import train.Train;
@@ -37,13 +40,16 @@ public class Station implements Serializable {
 	private int previousExitSwitch;
 	private int nextEntrySwitch;
 	private int previousEntrySwitch;
-	@OneToMany(fetch = FetchType.LAZY)
+	@OneToMany
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Collection<Train> parks = new ArrayList<>();
 	private double coordinatesLat;
 	private double coordinatesLng;
-	@OneToMany(fetch = FetchType.LAZY)
+	@OneToMany
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Collection<Package> sendPackageList = new ArrayList<>();
-	@OneToMany(fetch = FetchType.LAZY)
+	@OneToMany
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Collection<Package> deliveredPackageList = new ArrayList<>();
 
 	public Station() {
