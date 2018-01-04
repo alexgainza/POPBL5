@@ -3,6 +3,7 @@ package rail;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,9 +24,9 @@ public class Rail implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int railID;
 	private boolean occupied;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Station previousStation;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Station nextStation;
 
 	public Rail() {

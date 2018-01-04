@@ -17,9 +17,16 @@
 				class="org.apache.struts2.json.JSONInterceptor" />
 		</interceptors>
 	</package>
-	<package name="default" extends="struts-default,json-default-package" namespace="/">
+	<package name="default" extends="struts-default,json-default-package"
+		namespace="/">
+		<!--<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>-->
 		<action name="login" class="controllers.LoginAction">
-			<result name="success">packages.jsp</result>
+			<result name="PHC"> <!--type="tiles"-->PHC.jsp</result>
+			<result name="Controller"> <!--type="tiles"-->StationController.jsp</result>
+			<result name="Driver"> <!--type="tiles"-->TrainDriver.jsp</result>
 			<result name="error">index.jsp</result>
 		</action>
 
@@ -55,6 +62,8 @@
 		<action name="JSONAction" class="controllers.JSONAction">
 			<result type="json" />
 		</action>
+		<action name="JSONActionTrain" class="controllers.JSONActionTrain">
+			<result type="json" />
+		</action>
 	</package>
-
 </struts>

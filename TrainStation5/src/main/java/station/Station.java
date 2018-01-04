@@ -5,12 +5,16 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import paquete.Package;
 import station.Station;
@@ -29,20 +33,25 @@ public class Station implements Serializable {
 	private int stationID;
 	private String description;
 	@ManyToOne
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Station nextStation;
 	@ManyToOne
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Station previousStation;
 	private int nextExitSwitch;
 	private int previousExitSwitch;
 	private int nextEntrySwitch;
 	private int previousEntrySwitch;
 	@OneToMany
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Collection<Train> parks = new ArrayList<>();
 	private double coordinatesLat;
 	private double coordinatesLng;
 	@OneToMany
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Collection<Package> sendPackageList = new ArrayList<>();
 	@OneToMany
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Collection<Package> deliveredPackageList = new ArrayList<>();
 
 	public Station() {
