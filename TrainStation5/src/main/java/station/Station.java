@@ -32,9 +32,11 @@ public class Station implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int stationID;
 	private String description;
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Station nextStation;
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Station previousStation;
 	private int nextExitSwitch;
 	private int previousExitSwitch;
