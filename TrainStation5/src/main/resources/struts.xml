@@ -62,5 +62,8 @@
 		<action name="JSONAction" class="controllers.JSONAction">
 			<result type="json" />
 		</action>
+		<action name="JSONActionTrain" class="controllers.JSONActionTrain">
+			<result type="json" />
+		</action>
 	</package>
 </struts>
