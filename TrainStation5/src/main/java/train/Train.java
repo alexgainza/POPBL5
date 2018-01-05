@@ -13,6 +13,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import paquete.Package;
 import rail.Rail;
 import station.Station;
@@ -28,12 +31,15 @@ public class Train implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int trainID;
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Station station;
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Rail rail;
 	private int direction;
-	@OneToMany(fetch = FetchType.LAZY)
+	@OneToMany
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Collection<Package> packageList = new ArrayList<>();
 	private boolean onGoing;
 

@@ -58,6 +58,9 @@
 		<action name="JSONAction" class="controllers.JSONAction">
 			<result type="json" />
 		</action>
+			<result type="json" />
+		<action name="JSONActionTrain" class="controllers.JSONActionTrain">
+		</action>
 		<action name="sendPackage" class="controllers.SendPackage">
 			<result name="success">SendPackage.jsp</result>
 		</action>
