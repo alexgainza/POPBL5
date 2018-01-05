@@ -43,10 +43,6 @@
 			<result name="success" type="chain">index</result>
 		</action>
 
-		<action name="mapa" class="controllers.MapaAction" method="execute">
-			<result name="success">mapa.jsp</result>
-		</action>
-
 		<action name="list1" class="controllers.PackageAction" method="list">
 			<result name="success" type="chain">index</result>
 		</action>
@@ -63,7 +59,7 @@
 			<result type="json" />
 		</action>
 		<action name="sendPackage" class="controllers.SendPackage">
-			<result name="success">SendPackages.jsp</result>
+			<result name="success">SendPackage.jsp</result>
 		</action>
 	</package>
 </struts>

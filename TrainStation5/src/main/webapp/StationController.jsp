@@ -22,7 +22,20 @@
 			<img src="images/Titulo_Inicio.png" id="Titulo_Inicio">
 		</figure>
 	</header>
-	<hr></hr>
+	<div>
+		<div>
+			<h2>Rails</h2>
+			<label>Rail 1:</label>
+			
+		</div>
+		<script>
+			function loadRails() {
+				$.getJSON('JSONAction.action', function(data) {
+					var railList = (data.railList);
+				})
+			}
+		</script>
+	</div>
 
 </body>
 </html>
