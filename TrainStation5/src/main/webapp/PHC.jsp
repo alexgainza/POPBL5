@@ -9,13 +9,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>POPBL5</title>
 <link href="css/c3.min.css" rel="stylesheet" type="text/css" />
-<link href="css/PHC.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/PHC.css" />
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 </head>
 <body>
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<header>
 		<figure>
 			<img src="images/Tren_Inicio.png" id="Tren_Inicio">
@@ -23,18 +29,17 @@
 		</figure>
 	</header>
 	<nav>
-		<a href="packages.jsp" id="sendPackage">Send Package</a>
+		<a href="SendPackage.jsp" class="btn btn-success">Send Package</a>
 	</nav>
 	<div id="mapaSection">
 		<div id="trainInfo">
 			<h2>Train information</h2>
-			<span>Train:</span>
-			<input type="radio" name="train" /><label>Train1</label>
-			<input type="radio" name="train" /><label>Train2</label>
-			<input type="radio" name="train" /><label>Train3</label>
-			<input type="radio" name="train" /><label>Train4</label>
-			<input type="radio" name="train" /><label>Train5</label>
-			<input type="radio" name="train" /><label>Train6</label><br>
+			<span>Train:</span> <input type="radio" name="train" /><label>Train1</label>
+			<input type="radio" name="train" /><label>Train2</label> <input
+				type="radio" name="train" /><label>Train3</label> <input
+				type="radio" name="train" /><label>Train4</label> <input
+				type="radio" name="train" /><label>Train5</label> <input
+				type="radio" name="train" /><label>Train6</label><br>
 			<hr>
 			<p>Station:</p>
 			<p>Rail track:</p>
