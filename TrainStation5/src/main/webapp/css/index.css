@@ -29,3 +29,53 @@ form {
 	position:relative;
 	left:35%;
 }
+
+/*#Tren_Inicio {
+	display: inline-block;
+}
+
+#Titulo_Inicio {
+	display: inline-block;
+}
+
+.centrar {
+	width:37%;
+	margin:auto;
+}
+.centrar2 {
+	width:20%;
+	margin:auto;
+}
+
+/*.containerIndex {
+	position: relative;
+	margin:auto;
+	/*margin-left: auto;
+	margin-right: auto;
+	padding-right: 15px;
+	padding-left: 15px*/
+}
+
+@media ( min-width :576px) {
+	.containerIndex {
+		padding: 20 15 20 15;
+	}
+}
+
+@media ( min-width :768px) {
+	.containerIndex {
+		padding: 40 15 40 15;
+	}
+}
+
+@media ( min-width :992px) {
+	.containerIndex {
+		padding: 60 15 60 15;
+	}
+}
+
+@media ( min-width :1200px) {
+	.containerIndex {
+		padding: 180 500;
+	}
+}*/
