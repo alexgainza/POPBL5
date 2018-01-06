@@ -7,13 +7,16 @@ import rail.Rail;
 import rail.RailDAO;
 import station.Station;
 import station.StationDAO;
+import train.Train;
+import train.TrainDAO;
 
 public class JSONAction {
-	private List<Station> stationList = new ArrayList<Station>();
+	private List<Station> stationList = new ArrayList<>();
 	StationDAO stationDAO = new StationDAO();
 	private List<Rail> railList = new ArrayList<>();
 	RailDAO railDAO = new RailDAO();
-	private List<Boolean> estados = new ArrayList<>();
+	private List<Train> trainList = new ArrayList<>();
+	TrainDAO trainDAO = new TrainDAO();
 
 	public List<Station> getStationList() {
 		return stationList;
@@ -31,12 +34,12 @@ public class JSONAction {
 		this.railList = railList;
 	}
 
-	public List<Boolean> getEstados() {
-		return estados;
+	public List<Train> getTrainList() {
+		return trainList;
 	}
 
-	public void setEstados(List<Boolean> estados) {
-		this.estados = estados;
+	public void setTrainList(List<Train> trainList) {
+		this.trainList = trainList;
 	}
 
 	public String execute() throws Exception {
@@ -46,9 +49,9 @@ public class JSONAction {
 			System.out.println("ERROR LOADING STATIONS");
 		}
 		railList = railDAO.list();
-		for(int i = 0; i < railList.size();i++) {
-			estados.add(railList.get(i).isOccupied());
-			System.out.println(estados.get(i));
+		trainList = trainDAO.list();
+		for(int i = 0; i < trainList.size();i++) {
+			System.out.println(trainList.get(i).isOnGoing());
 		}
 		return "success";
 	}
