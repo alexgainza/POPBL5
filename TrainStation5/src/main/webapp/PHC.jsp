@@ -47,7 +47,7 @@
 			<p>Station:</p>
 			<p>Rail track:</p>
 			<p>Destination:</p>
-			<p>Nï¿½ of packages:</p>
+			<p>Nº of packages:</p>
 		</div>
 		<div id="map"></div>
 	</div>

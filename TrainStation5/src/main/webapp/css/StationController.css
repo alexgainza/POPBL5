@@ -1,17 +1,11 @@
 #Tren_Inicio {
-	display:inline-block;
-	width:35%;
+	display: inline-block;
 }
 
 #Titulo_Inicio {
-	display:inline-block;
-	width:60%;
+	display: inline-block;
 }
 
 header {
-	border:1px solid black;
-}
-
-body {
-	position:absolute;
+	border: 1px solid black;
 }

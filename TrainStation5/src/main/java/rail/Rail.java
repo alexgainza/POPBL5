@@ -3,12 +3,14 @@ package rail;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import station.Station;
 
@@ -24,9 +26,11 @@ public class Rail implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int railID;
 	private boolean occupied;
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Station previousStation;
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Station nextStation;
 
 	public Rail() {

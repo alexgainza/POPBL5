@@ -4,6 +4,7 @@
 <script>
 	
 <%@include file="js/jquery-1.7.1.min.js"%>
+<%@include file="js/StationController.js"%>
 	
 </script>
 <html>
@@ -26,15 +27,30 @@
 		<div>
 			<h2>Rails</h2>
 			<label>Rail 1:</label>
-			
+			<label id="rail1" style="background-color:black; padding:5 20;"></label><br>
+			<label>Rail 7:</label>
+			<label id="rail7" style="background-color:black; padding:5 20;"></label><br>
+			<label>Rail 2:</label>
+			<label id="rail2" style="background-color:black; padding:5 20;"></label><br>
+			<label>Rail 8:</label>
+			<label id="rail8" style="background-color:black; padding:5 20;"></label><br>
+			<label>Rail 3:</label>
+			<label id="rail3" style="background-color:black; padding:5 20;"></label><br>
+			<label>Rail 9:</label>
+			<label id="rail9" style="background-color:black; padding:5 20;"></label><br>
+			<label>Rail 4:</label>
+			<label id="rail4" style="background-color:black; padding:5 20;"></label><br>
+			<label>Rail 10:</label>
+			<label id="rail10" style="background-color:black; padding:5 20;"></label><br>
+			<label>Rail 5:</label>
+			<label id="rail5" style="background-color:black; padding:5 20;"></label><br>
+			<label>Rail 11:</label>
+			<label id="rail11" style="background-color:black; padding:5 20;"></label><br>
+			<label>Rail 6:</label>
+			<label id="rail6" style="background-color:black; padding:5 20;"></label><br>
+			<label>Rail 12:</label>
+			<label id="rail12" style="background-color:black; padding:5 20;"></label><br>
 		</div>
-		<script>
-			function loadRails() {
-				$.getJSON('JSONAction.action', function(data) {
-					var railList = (data.railList);
-				})
-			}
-		</script>
 	</div>
 
 </body>
