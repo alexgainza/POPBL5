@@ -24,7 +24,7 @@
 		</figure>
 	</header>
 	<div>
-		<div style="display:inline-block;">
+		<div style="border: 1px solid black; display:inline-block;">
 			<h2>Rails</h2>
 			<label>Rail 1:</label>
 			<label id="rail1" style="display:inline-block; background-color:black; padding:5 20;"></label><br>
@@ -51,7 +51,7 @@
 			<label>Rail 12:</label>
 			<label id="rail12" style="display:inline-block; background-color:black; padding:5 20;"></label><br>
 		</div>
-		<div style="display:inline-block;">
+		<div style="border: 1px solid black; display:inline-block;">
 			<h2>Trains</h2>
 			<label>Train 1:</label>
 			<label id="train1" style="display:inline-block; background-color:black; padding:5 20;"></label>
