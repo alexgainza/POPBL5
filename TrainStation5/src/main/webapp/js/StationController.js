@@ -28,6 +28,11 @@ function loadTrains() {
 			var stationId = document.getElementById("stationId" + i)
 			var textParking = document.getElementById("textParking" + i)
 			var parkingId = document.getElementById("parkingId" + i)
+			var textDestination = document.getElementById("textDestination" + i)
+			var destinationId = document.getElementById("destinationId" + i)
+			var textRail = document.getElementById("textRail" + i)
+			var railId = document.getElementById("railId" + i)
+
 			if (train[i - 1].onGoing == false) {
 				box.style.backgroundColor = "green";
 			} else {
@@ -41,15 +46,29 @@ function loadTrains() {
 				textPackages.style.display = "inline-block";
 				nPackages.innerHTML = train[i - 1].packageList.length;
 				nPackages.style.display = "inline-block";
+				textDestination.style.display = "inline-block";
+				destinationId.innerHTML = "Station " + train[i - 1].station.stationID;
+				destinationId.style.display = "inline-block";
+				textRail.style.display = "inline-block";
+				if (train[i - 1].rail == null) {
+					railId.innerHTML = "null";
+				} else {
+					railId.innerHTML = train[i - 1].rail.railID;
+				}
+				railId.style.display = "inline-block";
 			} else {
 				textStation.style.display = "inline-block";
-				stationId.innerHTML = train[i-1].station.stationID;
+				stationId.innerHTML = "Station " + train[i - 1].station.stationID;
 				stationId.style.display = "inline-block";
 				textParking.style.display = "inline-block";
 				parkingId.innerHTML = "0";
 				parkingId.style.display = "inline-block";
 				textPackages.style.display = "none";
 				nPackages.style.display = "none";
+				textDestination.style.display = "none";
+				destinationId.style.display = "none";
+				textRail.style.display = "none";
+				railId.style.display = "none";
 			}
 		}
 	})
