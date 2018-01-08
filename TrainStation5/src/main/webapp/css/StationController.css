@@ -9,3 +9,13 @@
 header {
 	border: 1px solid black;
 }
+
+.numbers {
+	background-color:grey;
+}
+
+#map {
+	height: 55vh;
+	width: 45vw;
+	margin: 20 20;
+}
