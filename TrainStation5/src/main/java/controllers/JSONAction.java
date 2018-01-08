@@ -50,9 +50,6 @@ public class JSONAction {
 		}
 		railList = railDAO.list();
 		trainList = trainDAO.list();
-		for(int i = 0; i < trainList.size();i++) {
-			System.out.println(trainList.get(i).isOnGoing());
-		}
 		return "success";
 	}
 }

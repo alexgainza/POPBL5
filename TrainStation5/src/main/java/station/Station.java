@@ -37,10 +37,8 @@ public class Station implements Serializable {
 	@ManyToOne
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private Station previousStation;
-	private int nextExitSwitch;
-	private int previousExitSwitch;
-	private int nextEntrySwitch;
-	private int previousEntrySwitch;
+	private int exitSwitch;
+	private int entrySwitch;
 	@OneToMany
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private Collection<Train> parks = new ArrayList<>();
@@ -56,15 +54,12 @@ public class Station implements Serializable {
 	public Station() {
 	}
 
-	public Station(int stationID, String description, int nextExitSwitch, int previousExitSwitch, int nextEntrySwitch,
-			int previousEntrySwitch, double coordinatesLat, double coordinatesLng, Station nextStation,
+	public Station(int stationID, String description, int exitSwitch, int entrySwitch, double coordinatesLat, double coordinatesLng, Station nextStation,
 			Station previousStation) {
 		this.stationID = stationID;
 		this.description = description;
-		this.nextExitSwitch = nextExitSwitch;
-		this.previousExitSwitch = previousExitSwitch;
-		this.nextEntrySwitch = nextEntrySwitch;
-		this.previousEntrySwitch = previousEntrySwitch;
+		this.exitSwitch = exitSwitch;
+		this.entrySwitch = entrySwitch;
 		this.coordinatesLat = coordinatesLat;
 		this.coordinatesLng = coordinatesLng;
 		this.nextStation = nextStation;
@@ -103,36 +98,20 @@ public class Station implements Serializable {
 		this.previousStation = previousStation;
 	}
 
-	public int getNextExitSwitch() {
-		return nextExitSwitch;
+	public int getExitSwitch() {
+		return exitSwitch;
 	}
 
-	public void setNextExitSwitch(int nextExitSwitch) {
-		this.nextExitSwitch = nextExitSwitch;
+	public void setExitSwitch(int exitSwitch) {
+		this.exitSwitch = exitSwitch;
 	}
 
-	public int getPreviousExitSwitch() {
-		return previousExitSwitch;
+	public int getEntrySwitch() {
+		return entrySwitch;
 	}
 
-	public void setPreviousExitSwitch(int previousExitSwitch) {
-		this.previousExitSwitch = previousExitSwitch;
-	}
-
-	public int getNextEntrySwitch() {
-		return nextEntrySwitch;
-	}
-
-	public void setNextEntrySwitch(int nextEntrySwitch) {
-		this.nextEntrySwitch = nextEntrySwitch;
-	}
-
-	public int getPreviousEntrySwitch() {
-		return previousEntrySwitch;
-	}
-
-	public void setPreviousEntrySwitch(int previousEntrySwitch) {
-		this.previousEntrySwitch = previousEntrySwitch;
+	public void setEntrySwitch(int entrySwitch) {
+		this.entrySwitch = entrySwitch;
 	}
 
 	public Collection<Train> getParks() {
