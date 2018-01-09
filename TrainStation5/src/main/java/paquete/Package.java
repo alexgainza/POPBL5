@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import station.Station;
+import train.Train;
 
 @SuppressWarnings("serial")
 @Entity
@@ -31,6 +32,8 @@ public class Package implements Serializable {
 	private int packageState;
 	private Date sendDate;
 	private boolean asignadoTren;
+	@ManyToOne(fetch = FetchType.LAZY)
+	private Train takeTrain;
 
 	
 	public Package() {
@@ -100,5 +103,13 @@ public class Package implements Serializable {
 
 	public void setAsignadoTren(boolean asignadoTren) {
 		this.asignadoTren = asignadoTren;
+	}
+
+	public Train getTakeTrain() {
+		return takeTrain;
+	}
+
+	public void setTakeTrain(Train takeTrain) {
+		this.takeTrain = takeTrain;
 	}
 }

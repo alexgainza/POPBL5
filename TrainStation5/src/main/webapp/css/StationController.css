@@ -1,17 +1,9 @@
-#Tren_Inicio {
-	display: inline-block;
-}
-
-#Titulo_Inicio {
-	display: inline-block;
-}
-
 header {
 	border: 1px solid black;
 }
 
 .numbers {
-	background-color:grey;
+	background-color:lightgrey;
 }
 
 #map {

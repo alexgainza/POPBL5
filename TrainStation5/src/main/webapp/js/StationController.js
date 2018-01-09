@@ -14,8 +14,6 @@ function loadRails() {
 	})
 }
 
-window.onLoad = loadRails();
-
 function loadTrains() {
 	var train = [];
 	$.getJSON('JSONAction.action', function(data) {
@@ -74,4 +72,22 @@ function loadTrains() {
 	})
 }
 
+function loadStations() {
+	var station = [];
+	$.getJSON('JSONAction.action', function(data) {
+		station = data.stationList;
+		console.log(station);
+		for (var i = 1; i <= station.length; i++) {
+			var box = document.getElementById("station" + i);
+			if (station[i - 1].parks.length == 4) {
+				box.style.backgroundColor = "red";
+			} else {
+				box.style.backgroundColor = "green";
+			}
+		}
+	})
+}
+
+window.onLoad = loadRails();
 window.onLoad = loadTrains();
+window.onLoad = loadStations();
