@@ -49,7 +49,7 @@ function loadTrains() {
 				destinationId.style.display = "inline-block";
 				textRail.style.display = "inline-block";
 				if (train[i - 1].rail == null) {
-					railId.innerHTML = "null";
+					railId.innerHTML = "0";
 				} else {
 					railId.innerHTML = train[i - 1].rail.railID;
 				}
@@ -58,9 +58,17 @@ function loadTrains() {
 				textStation.style.display = "inline-block";
 				stationId.innerHTML = "Station " + train[i - 1].station.stationID;
 				stationId.style.display = "inline-block";
-				textParking.style.display = "inline-block";
-				parkingId.innerHTML = "0";
-				parkingId.style.display = "inline-block";
+				textParking.style.display = "none";
+				parkingId.style.display = "none";
+				/*textParking.style.display = "inline-block";
+				for(var j = 1; j <= 4; j++) {
+					console.log(train[i - 1].station.parks);
+					console.log(train[i-1]);
+					if(train[i - 1].station.parks[j].trainID == train[i - 1].trainID) {
+						parkingId.innerHTML = j;
+					}
+				}
+				parkingId.style.display = "inline-block";*/
 				textPackages.style.display = "none";
 				nPackages.style.display = "none";
 				textDestination.style.display = "none";

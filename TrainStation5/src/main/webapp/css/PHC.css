@@ -1,62 +1,31 @@
-#Tren_Inicio {
-	display: inline-block;
-	width: 10%;
-}
-
-#Titulo_Inicio {
-	display: inline-block;
-	width: 20%;
-}
-
 header {
 	border: 1px solid black;
-	width: 90vw;
-	margin: 50 50;
 }
 
 #mapaSection {
 	border: 1px solid black;
-	height: 60vh;
-	width: 90vw;
-	margin: 50;
+	text-align:center;
+	margin: 0;
 }
 
-#trainInfo {
-	display: inline-block;
-	margin: 20 50;
-	text-align: center;
-}
-
-#trainInfo>p {
-	margin: 25;
-	font-size: 30px;
-}
-
-#trainInfo>span {
-	font-size: 30px;
-}
-
-#trainInfo>label {
+#textTrain {
 	font-size: 20px;
+}
+
+.text {
+	font-size: 28px;
 }
 
 #map {
-	height: 55vh;
-	width: 45vw;
-	margin: 20 20;
-	float: right;
+	height: 58%;
+	margin-top: 20px;
 }
 
-#sendPackage {
-	border: 1px solid black;
-	text-decoration: none;
-	color: black;
-	margin: 50;
-	font-size: 20px;
-	padding: 10;
+nav {
+	margin: 20 0;
 }
 
-#sendPackage:hover {
-	color: lightblue;
-	text-decoration: underline;
+.numbers {
+	background-color:lightgrey;
+	font-size: 28px;
 }
