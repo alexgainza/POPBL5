@@ -30,9 +30,8 @@
 			<result name="error">index.jsp</result>
 		</action>
 
-		<action name="add" class="controllers.PackageAction" method="add">
-			<result name="success" type="chain">index</result>
-			<result name="input" type="chain">index</result>
+		<action name="addPackage" class="controllers.PackageAction" method="add">
+			<result name="success">PHC.jsp</result>
 		</action>
 
 		<action name="delete" class="controllers.PackageAction" method="delete">
@@ -43,16 +42,8 @@
 			<result name="success" type="chain">index</result>
 		</action>
 
-		<action name="list1" class="controllers.PackageAction" method="list">
-			<result name="success" type="chain">index</result>
-		</action>
-
-		<action name="list2" class="controllers.TrainAction" method="list">
-			<result name="success" type="chain">index</result>
-		</action>
-
 		<action name="index" class="controllers.PackageAction">
-			<result name="input">/packages.jsp</result>
+			<result name="input">/.jsp</result>
 			<result name="success">packages.jsp</result>
 		</action>
 		<action name="JSONAction" class="controllers.JSONAction">
@@ -60,9 +51,6 @@
 		</action>
 		<action name="JSONActionTrain" class="controllers.JSONActionTrain">
 			<result type="json" />
-		</action>
-		<action name="sendPackage" class="controllers.SendPackage">
-			<result name="success">SendPackage.jsp</result>
 		</action>
 	</package>
 </struts>
