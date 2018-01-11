@@ -45,7 +45,7 @@ function loadTrains() {
 				nPackages.innerHTML = train[i - 1].packageList.length;
 				nPackages.style.display = "inline-block";
 				textDestination.style.display = "inline-block";
-				destinationId.innerHTML = "Station " + train[i - 1].station.stationID;
+				destinationId.innerHTML = "Station " + train[i - 1].station.description;
 				destinationId.style.display = "inline-block";
 				textRail.style.display = "inline-block";
 				if (train[i - 1].rail == null) {
@@ -56,7 +56,7 @@ function loadTrains() {
 				railId.style.display = "inline-block";
 			} else {
 				textStation.style.display = "inline-block";
-				stationId.innerHTML = "Station " + train[i - 1].station.stationID;
+				stationId.innerHTML = "Station " + train[i - 1].station.description;
 				stationId.style.display = "inline-block";
 				textParking.style.display = "none";
 				parkingId.style.display = "none";

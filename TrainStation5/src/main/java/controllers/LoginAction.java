@@ -13,24 +13,27 @@ public class LoginAction extends ActionSupport {
 	private String password;
 	private List<User> users;
 	private UserDAO userDAO;
+	private User user;
 
 	public String execute() {
 		userDAO = new UserDAO();
 		users = userDAO.list();
-
-		for (User user : users) {
+		
+		for (int i = 0; i < users.size(); i++) {
+			user = users.get(i);
 			if (this.username.equals(user.getUsername()) && this.password.equals(user.getPassword())) {
 				if(user.getRole().getRoleID() == 1) {
 					return "PHC";
 				}
 				else if(user.getRole().getRoleID() == 2) {
-					return "Driver";
+					return "Controller";
 				}
 				else if(user.getRole().getRoleID() == 3) {
-					return "Controller";
+					return "Driver";
 				}
 			}
 		}
+			
 		addActionError(getText("error.login"));
 		return "error";
 	}
@@ -49,5 +52,13 @@ public class LoginAction extends ActionSupport {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public User getUser() {
+		return user;
 	}
 }

@@ -27,7 +27,7 @@
 			<result name="PHC"> <!--type="tiles"-->PHC.jsp</result>
 			<result name="Controller"> <!--type="tiles"-->StationController.jsp</result>
 			<result name="Driver"> <!--type="tiles"-->TrainDriver.jsp</result>
-			<result name="error">index.jsp</result>
+			<result name="error">Login.jsp</result>
 		</action>
 
 		<action name="addPackage" class="controllers.PackageAction" method="add">
@@ -47,9 +47,6 @@
 			<result name="success">packages.jsp</result>
 		</action>
 		<action name="JSONAction" class="controllers.JSONAction">
-			<result type="json" />
-		</action>
-		<action name="JSONActionTrain" class="controllers.JSONActionTrain">
 			<result type="json" />
 		</action>
 	</package>

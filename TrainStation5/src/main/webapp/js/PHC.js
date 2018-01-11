@@ -17,13 +17,13 @@ function loadTrain() {
 				textDestination.style.display = "none";
 				railId.style.display = "none";
 				textRail.style.display = "none";
-				stationId.innerHTML = "Station " + train[0].station.stationID;
+				stationId.innerHTML = "Station " + train[0].station.description;
 				stationId.style.display = "inline-block";
 				textStation.style.display = "inline-block";
 			} else {
 				stationId.style.display = "none";
 				textStation.style.display = "none";
-				destinationId.innerHTML = "Station " + train[0].station.stationID;
+				destinationId.innerHTML = "Station " + train[0].station.description;
 				destinationId.style.display = "inline-block";
 				textDestination.style.display = "inline-block";
 				railId.style.display = "inline-block";
@@ -43,13 +43,13 @@ function loadTrain() {
 				textDestination.style.display = "none";
 				railId.style.display = "none";
 				textRail.style.display = "none";
-				stationId.innerHTML = "Station " + train[1].station.stationID;
+				stationId.innerHTML = "Station " + train[1].station.description;
 				stationId.style.display = "inline-block";
 				textStation.style.display = "inline-block";
 			} else {
 				stationId.style.display = "none";
 				textStation.style.display = "none";
-				destinationId.innerHTML = "Station " + train[1].station.stationID;
+				destinationId.innerHTML = "Station " + train[1].station.description;
 				destinationId.style.display = "inline-block";
 				textDestination.style.display = "inline-block";
 				railId.style.display = "inline-block";
@@ -69,13 +69,13 @@ function loadTrain() {
 				textDestination.style.display = "none";
 				railId.style.display = "none";
 				textRail.style.display = "none";
-				stationId.innerHTML = "Station " + train[2].station.stationID;
+				stationId.innerHTML = "Station " + train[2].station.description;
 				stationId.style.display = "inline-block";
 				textStation.style.display = "inline-block";
 			} else {
 				stationId.style.display = "none";
 				textStation.style.display = "none";
-				destinationId.innerHTML = "Station " + train[2].station.stationID;
+				destinationId.innerHTML = "Station " + train[2].station.description;
 				destinationId.style.display = "inline-block";
 				textDestination.style.display = "inline-block";
 				railId.style.display = "inline-block";
@@ -95,13 +95,13 @@ function loadTrain() {
 				textDestination.style.display = "none";
 				railId.style.display = "none";
 				textRail.style.display = "none";
-				stationId.innerHTML = "Station " + train[3].station.stationID;
+				stationId.innerHTML = "Station " + train[3].station.description;
 				stationId.style.display = "inline-block";
 				textStation.style.display = "inline-block";
 			} else {
 				stationId.style.display = "none";
 				textStation.style.display = "none";
-				destinationId.innerHTML = "Station " + train[3].station.stationID;
+				destinationId.innerHTML = "Station " + train[3].station.description;
 				destinationId.style.display = "inline-block";
 				textDestination.style.display = "inline-block";
 				railId.style.display = "inline-block";
@@ -121,13 +121,13 @@ function loadTrain() {
 				textDestination.style.display = "none";
 				railId.style.display = "none";
 				textRail.style.display = "none";
-				stationId.innerHTML = "Station " + train[4].station.stationID;
+				stationId.innerHTML = "Station " + train[4].station.description;
 				stationId.style.display = "inline-block";
 				textStation.style.display = "inline-block";
 			} else {
 				stationId.style.display = "none";
 				textStation.style.display = "none";
-				destinationId.innerHTML = "Station " + train[4].station.stationID;
+				destinationId.innerHTML = "Station " + train[4].station.description;
 				destinationId.style.display = "inline-block";
 				textDestination.style.display = "inline-block";
 				railId.style.display = "inline-block";
@@ -145,13 +145,13 @@ function loadTrain() {
 			if (train[5].onGoing == false) {
 				destinationId.style.display = "none";
 				textDestination.style.display = "none";
-				stationId.innerHTML = "Station " + train[5].station.stationID;
+				stationId.innerHTML = "Station " + train[5].station.description;
 				stationId.style.display = "inline-block";
 				textStation.style.display = "inline-block";
 			} else {
 				stationId.style.display = "none";
 				textStation.style.display = "none";
-				destinationId.innerHTML = "Station " + train[5].station.stationID;
+				destinationId.innerHTML = "Station " + train[5].station.description;
 				destinationId.style.display = "inline-block";
 				textDestination.style.display = "inline-block";
 				railId.style.display = "inline-block";

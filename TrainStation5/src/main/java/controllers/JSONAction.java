@@ -12,11 +12,11 @@ import train.TrainDAO;
 
 public class JSONAction {
 	private List<Station> stationList = new ArrayList<>();
-	StationDAO stationDAO = new StationDAO();
+	private StationDAO stationDAO = new StationDAO();
 	private List<Rail> railList = new ArrayList<>();
-	RailDAO railDAO = new RailDAO();
+	private RailDAO railDAO = new RailDAO();
 	private List<Train> trainList = new ArrayList<>();
-	TrainDAO trainDAO = new TrainDAO();
+	private TrainDAO trainDAO = new TrainDAO();
 
 	public List<Station> getStationList() {
 		return stationList;
@@ -45,9 +45,6 @@ public class JSONAction {
 	public String execute() throws Exception {
 
 		stationList = stationDAO.list();
-		if (stationList == null) {
-			System.out.println("ERROR LOADING STATIONS");
-		}
 		railList = railDAO.list();
 		trainList = trainDAO.list();
 		return "success";
