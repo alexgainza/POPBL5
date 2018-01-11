@@ -8,7 +8,7 @@
 <link href="css/c3.min.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/StationController.css" />
-<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/StationController.js"></script>
 <script type="text/javascript" src="js/map.js"></script>
 </head>

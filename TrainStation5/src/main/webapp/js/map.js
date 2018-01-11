@@ -77,7 +77,7 @@ function initMap() {
 	greenMap.setMap(map);
 
 	// create train markers
-	$.getJSON('JSONActionTrain.action', function(data) {
+	$.getJSON('JSONAction.action', function(data) {
 		trainList = data.trainList;
 		for (var i = 0; i < trainList.length; i++) {
 			trainMarkers[i] = new google.maps.Marker({
@@ -93,10 +93,7 @@ function initMap() {
 function setMarkerTrainPosition() {
 	setInterval(
 			function() {
-				$
-						.getJSON(
-								'JSONActionTrain.action',
-								function(data) {
+				$.getJSON('JSONAction.action', function(data) {
 									trainList = data.trainList;
 									for (var i = 0; i < trainList.length; i++) {
 										var lat;

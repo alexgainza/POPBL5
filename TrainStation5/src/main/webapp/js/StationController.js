@@ -84,7 +84,6 @@ function loadStations() {
 	var station = [];
 	$.getJSON('JSONAction.action', function(data) {
 		station = data.stationList;
-		console.log(station);
 		for (var i = 1; i <= station.length; i++) {
 			var box = document.getElementById("station" + i);
 			if (station[i - 1].parks.length == 4) {
