@@ -45,7 +45,7 @@ function loadTrains() {
 				nPackages.innerHTML = train[i - 1].packageList.length;
 				nPackages.style.display = "inline-block";
 				textDestination.style.display = "inline-block";
-				destinationId.innerHTML = "Station " + train[i - 1].station.description;
+				destinationId.innerHTML = train[i - 1].station.description;
 				destinationId.style.display = "inline-block";
 				textRail.style.display = "inline-block";
 				if (train[i - 1].rail == null) {
@@ -56,19 +56,10 @@ function loadTrains() {
 				railId.style.display = "inline-block";
 			} else {
 				textStation.style.display = "inline-block";
-				stationId.innerHTML = "Station " + train[i - 1].station.description;
+				stationId.innerHTML = train[i - 1].station.description;
 				stationId.style.display = "inline-block";
 				textParking.style.display = "none";
 				parkingId.style.display = "none";
-				/*textParking.style.display = "inline-block";
-				for(var j = 1; j <= 4; j++) {
-					console.log(train[i - 1].station.parks);
-					console.log(train[i-1]);
-					if(train[i - 1].station.parks[j].trainID == train[i - 1].trainID) {
-						parkingId.innerHTML = j;
-					}
-				}
-				parkingId.style.display = "inline-block";*/
 				textPackages.style.display = "none";
 				nPackages.style.display = "none";
 				textDestination.style.display = "none";

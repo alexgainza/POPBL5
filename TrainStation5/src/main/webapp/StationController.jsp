@@ -13,24 +13,33 @@
 <script type="text/javascript" src="js/map.js"></script>
 </head>
 <body class="container">
-	<header>
-		<figure>
-			<img src="images/Tren_Inicio.png" id="Tren_Inicio">
-			<img src="images/Titulo_Inicio.png" id="Titulo_Inicio">
+	<header class="row">
+		<div class="col-md-5">
+			<figure class="row">
+				<img src="images/Tren_Inicio.png" class="col-md-5">
+				<img src="images/Titulo_Inicio.png" class="col-md-7">
+			</figure>
+		</div>
+		<figure id="derecha" class="col-md-4 col-md-offset-4">
+			<div class="row">
+				<img src="images/euskera.png" id="idiomas">
+				<img src="images/ingles.png" id="idiomas">
+				<img src="images/español.png" id="idiomas">
+			</div>
+			<a href="Settings.jsp"> <img src="images/settings.png" id="settings"> </a>
 		</figure>
 	</header>
 	<div>
-		<a href="Stats.jsp" class="btn btn-primary" style="float:right; margin:20 0;">See stats</a>
+		<a href="Stats.jsp" id="statsButton" class="btn btn-primary">See stats</a>
 	</div>
 	<div>
-		<div style="margin:20 0">
+		<div style="margin:20 0;">
 			<div>
 				<h2>Map</h2>
 			</div>
 			<div id="map" style="height: 60%; width: 100%; margin:0;"></div>
 			<script async defer
 				src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpWAG8QwQnVNYs3Lbm3dMhaD1fRz1QOeA&callback=initMap">
-				
 			</script>
 		</div>
 		<div class="row">

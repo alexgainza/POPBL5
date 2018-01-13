@@ -3,11 +3,16 @@ header {
 }
 
 .numbers {
-	background-color:lightgrey;
+	background-color: lightgrey;
 }
 
 #map {
 	height: 55vh;
 	width: 45vw;
 	margin: 20 20;
+}
+
+#statsButton {
+	float: right;
+	margin: 20 0;
 }

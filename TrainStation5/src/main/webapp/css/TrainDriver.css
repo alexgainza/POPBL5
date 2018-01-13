@@ -23,3 +23,9 @@ header {
 #stop {
 	padding: 10 20;
 }
+
+#idiomas {
+	float: right;
+	margin-left: 5;
+	margin-right: 5;
+}

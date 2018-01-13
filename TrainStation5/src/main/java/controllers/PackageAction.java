@@ -21,7 +21,7 @@ public class PackageAction extends ActionSupport {
 
 	public void setPaquete(Package paquete) {
 		this.paquete = paquete;
-	}
+	}	
 
 	public PackageAction() {
 		packageDAO = new PackageDAO();

@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -10,17 +9,27 @@
 <link rel="stylesheet" href="css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/Stats.css" />
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-<!--<script type="text/javascript" src="js/Stats.js"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
 <script src="js/c3.min.js"></script>
 </head>
 <body class="container">
-	<header> 
-		<figure> 
-			<img src="images/Tren_Inicio.png" id="Tren_Inicio"> 
-			<img src="images/Titulo_Inicio.png" id="Titulo_Inicio"> 
-		</figure> 
+	<header class="row">
+		<div class="col-md-5">
+			<figure class="row">
+				<img src="images/Tren_Inicio.png" class="col-md-5">
+				<img src="images/Titulo_Inicio.png" class="col-md-7">
+			</figure>
+		</div>
+		<figure id="derecha" class="col-md-4 col-md-offset-4">
+			<div class="row">
+				<img src="images/euskera.png" id="idiomas">
+				<img src="images/ingles.png" id="idiomas">
+				<img src="images/español.png" id="idiomas">
+			</div>
+			<a href="Settings.jsp"> <img src="images/settings.png" id="settings"> </a>
+		</figure>
 	</header>
+	<a href="PHC.jsp" class="btn btn-danger">Exit</a>
 	<div id="grafico">
 		<h1>Nº of packages per day</h1>
 		<div id="perDay"></div>

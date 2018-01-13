@@ -8,10 +8,20 @@
 <script type="text/javascript" src="js/SendPackage.js"></script>
 </head>
 <body class="container">
-	<header>
-		<figure>
-			<img src="images/Tren_Inicio.png" id="Tren_Inicio">
-			<img src="images/Titulo_Inicio.png" id="Titulo_Inicio">
+	<header class="row">
+		<div class="col-md-5">
+			<figure class="row">
+				<img src="images/Tren_Inicio.png" class="col-md-5">
+				<img src="images/Titulo_Inicio.png" class="col-md-7">
+			</figure>
+		</div>
+		<figure id="derecha" class="col-md-4 col-md-offset-4">
+			<div class="row">
+				<img src="images/euskera.png" id="idiomas">
+				<img src="images/ingles.png" id="idiomas">
+				<img src="images/español.png" id="idiomas">
+			</div>
+			<a href="Settings.jsp"> <img src="images/settings.png" id="settings"> </a>
 		</figure>
 	</header>
 	<a href="PHC.jsp" class="btn btn-danger">Exit</a>
