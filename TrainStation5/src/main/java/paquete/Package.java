@@ -1,3 +1,10 @@
+/**
+ * @file Package.java
+ * @author Alex
+ * @date 15/12/2017
+ * @brief Package bean
+ */
+
 package paquete;
 
 import java.io.Serializable;
@@ -21,17 +28,25 @@ public class Package implements Serializable {
 	@SuppressWarnings("unused")
 	private static final int serialVersionUID = 1;
 	
+	/** The packageID. */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int packageID;
+	/** The origin station of the package. */
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Station origin;
+	/** The destination station of the package. */
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Station destination;
+	/** The description of the package. */
 	private String description;
+	/** The package's state. */
 	private int packageState;
+	/** The package's send date. */
 	private Date sendDate;
+	/** If the package is assigned to a train or not. */
 	private boolean asignadoTren;
+	/** The train where the package is. */
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Train takeTrain;
 
@@ -39,6 +54,12 @@ public class Package implements Serializable {
 	public Package() {
 	}
 
+	/**
+	 * The constructor.
+	 * @param origin
+	 * @param destination
+	 * @param description
+	 */
 	public Package(Station origin, Station destination, String description) {
 		this.origin = origin;
 		this.destination = destination;
@@ -48,67 +69,130 @@ public class Package implements Serializable {
 		this.asignadoTren = false;
 	}
 
-	
+	/**
+	 * Gets the packageID.
+	 * @return packageID
+	 */
 	public int getPackageID() {
 		return packageID;
 	}
 
+	/**
+	 * Sets the packageID.
+	 * @param packageID
+	 */
 	public void setPackageID(int packageID) {
 		this.packageID = packageID;
 	}
 
+	/**
+	 * Gets the origin.
+	 * @return origin
+	 */
 	public Station getOrigin() {
 		return origin;
 	}
 
+	/**
+	 * Sets the origin.
+	 * @param origin
+	 */
 	public void setOrigin(Station origin) {
 		this.origin = origin;
 	}
 
+	/**
+	 * Gets the destination.
+	 * @return destination
+	 */
 	public Station getDestination() {
 		return destination;
 	}
 
+	/**
+	 * Sets the destination.
+	 * @param destination
+	 */
 	public void setDestination(Station destination) {
 		this.destination = destination;
 	}
 
+	/**
+	 * Gets the description.
+	 * @return description
+	 */
 	public String getDescription() {
 		return description;
 	}
 
+	/**
+	 * Sets the description.
+	 * @param description
+	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
+	/**
+	 * Gets the packageState.
+	 * @return packageState
+	 */
 	public int getPackageState() {
 		return packageState;
 	}
 
+	/**
+	 * Sets the packageState.
+	 * @param packageState
+	 */
 	public void setPackageState(int packageState) {
 		this.packageState = packageState;
 	}
 
+	/**
+	 * Gets the sendDate.
+	 * @return sendDate
+	 */
 	public Date getSendDate() {
 		return sendDate;
 	}
 
+	/**
+	 * Sets the sendDate.
+	 * @param sendDate
+	 */
 	public void setSendDate(Date sendDate) {
 		this.sendDate = sendDate;
 	}
 
+	/**
+	 * Gets if the package is assigned.
+	 * @return asignadoTren
+	 */
 	public boolean isAsignadoTren() {
 		return asignadoTren;
 	}
 
+	/**
+	 * Sets if the package is assigned.
+	 * @param asignadoTren
+	 */
 	public void setAsignadoTren(boolean asignadoTren) {
 		this.asignadoTren = asignadoTren;
 	}
 
+	/**
+	 * Gets the takeTrain.
+	 * @return takeTrain
+	 */
 	public Train getTakeTrain() {
 		return takeTrain;
 	}
 
+	/**
+	 * Sets the takeTrain.
+	 * @param takeTrain
+	 */
 	public void setTakeTrain(Train takeTrain) {
 		this.takeTrain = takeTrain;
 	}

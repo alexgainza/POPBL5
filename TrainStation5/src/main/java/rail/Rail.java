@@ -1,3 +1,10 @@
+/**
+ * @file Rail.java
+ * @author Alex
+ * @date 18/12/2017
+ * @brief Rail bean
+ */
+
 package rail;
 
 import java.io.Serializable;
@@ -22,13 +29,17 @@ public class Rail implements Serializable {
 	@SuppressWarnings("unused")
 	private static final int serialVersionUID = 2;
 
+	/** The rail id. */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int railID;
+	/** Rail occupied or not. */
 	private boolean occupied;
+	/** The previous station. */
 	@ManyToOne
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private Station previousStation;
+	/** The next station. */
 	@ManyToOne
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private Station nextStation;
@@ -36,6 +47,13 @@ public class Rail implements Serializable {
 	public Rail() {
 	}
 
+	/**
+	 * The constructor.
+	 * @param railID
+	 * @param previousStation
+	 * @param nextStation
+	 * @param occupied
+	 */
 	public Rail(int railID, Station previousStation, Station nextStation, boolean occupied) {
 		this.railID = railID;
 		this.previousStation = previousStation;
@@ -43,34 +61,66 @@ public class Rail implements Serializable {
 		this.occupied = occupied;
 	}
 
+	/**
+	 * Gets the railID.
+	 * @return railID
+	 */
 	public int getRailID() {
 		return railID;
 	}
 
+	/**
+	 * Sets the railID.
+	 * @param railID
+	 */
 	public void setRailID(int railID) {
 		this.railID = railID;
 	}
 
+	/**
+	 * Gets if the rail is occupied.
+	 * @return occupied
+	 */
 	public boolean isOccupied() {
 		return occupied;
 	}
 
+	/**
+	 * Sets if the rail is occupied.
+	 * @param occupied
+	 */
 	public void setOccupied(boolean occupied) {
 		this.occupied = occupied;
 	}
 
+	/**
+	 * Gets the previousStation.
+	 * @return previousStation
+	 */
 	public Station getPreviousStation() {
 		return previousStation;
 	}
 
+	/**
+	 * Sets the previousStation.
+	 * @param previousStation
+	 */
 	public void setPreviousStation(Station previousStation) {
 		this.previousStation = previousStation;
 	}
 
+	/**
+	 * Gets the nextStation.
+	 * @return nextStation
+	 */
 	public Station getNextStation() {
 		return nextStation;
 	}
 
+	/**
+	 * Sets the nextStation.
+	 * @param nextStation
+	 */
 	public void setNextStation(Station nextStation) {
 		this.nextStation = nextStation;
 	}

@@ -19,15 +19,11 @@
 				<img src="images/Titulo_Inicio.png" class="col-md-7">
 			</figure>
 		</div>
-		<figure id="derecha" class="col-md-4 col-md-offset-4">
-			<div class="row">
-				<img src="images/euskera.png" id="idiomas">
-				<img src="images/ingles.png" id="idiomas">
-				<img src="images/español.png" id="idiomas">
-			</div>
-			<a href="Settings.jsp"> <img src="images/settings.png" id="settings"> </a>
-		</figure>
+		<div class="col-md-7 col-md-offset-7">
+			<a href="Settings.jsp" style="float:right; margin-top: 20px;"> <img src="images/settings.png"> </a>
+		</div>
 	</header>
+	<a href="Login.jsp" id="logout" class="btn btn-danger">Log Out</a>
 	<div id="chooseTrain" class="row">
 		<button id="button" type="button" class="btn btn-default col-md-5" onclick="train1()">Train 1</button>
 		<button id="button" type="button" class="btn btn-primary col-md-5" onclick="train2()">Train 2</button>

@@ -1,3 +1,10 @@
+/**
+ * @file Train.java
+ * @author Alex
+ * @date 18/12/2017
+ * @brief Train bean
+ */
+
 package train;
 
 import java.io.Serializable;
@@ -27,74 +34,134 @@ public class Train implements Serializable {
 	@SuppressWarnings("unused")
 	private static final int serialVersionUID = 4;
 
+	/** The train id. */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int trainID;
+	/** The station where the train is. */
 	@ManyToOne
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private Station station;
+	/** The rail where the train is. */
 	@ManyToOne
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private Rail rail;
+	/** The direction. */
 	private int direction;
+	/** The package list. */
 	@OneToMany
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private Collection<Package> packageList = new ArrayList<>();
+	/** The train is stopped or not. */
 	private boolean onGoing;
 
 	public Train() {
 	}
 
+	/**
+	 * The constructor.
+	 * @param trainID
+	 * @param station
+	 * @param direction
+	 */
 	public Train(int trainID, Station station, int direction) {
 		this.trainID = trainID;
 		this.station = station;
 		this.direction = direction;
 	}
 
+	/**
+	 * Gets the trainID.
+	 * @return trainID
+	 */
 	public int getTrainID() {
 		return trainID;
 	}
 
+	/**
+	 * Sets the trainID.
+	 * @param trainID
+	 */
 	public void setTrainID(int trainID) {
 		this.trainID = trainID;
 	}
 
+	/**
+	 * Gets the station.
+	 * @return station
+	 */
 	public Station getStation() {
 		return station;
 	}
 
+	/**
+	 * Sets the station.
+	 * @param station
+	 */
 	public void setStation(Station station) {
 		this.station = station;
 	}
 
+	/**
+	 * Gets the rail.
+	 * @return rail
+	 */
 	public Rail getRail() {
 		return rail;
 	}
 
+	/**
+	 * Sets the rail.
+	 * @param rail
+	 */
 	public void setRail(Rail rail) {
 		this.rail = rail;
 	}
 
+	/**
+	 * Gets the direction.
+	 * @return direction
+	 */
 	public int getDirection() {
 		return direction;
 	}
 
+	/**
+	 * Sets the direction.
+	 * @param direction
+	 */
 	public void setDirection(int direction) {
 		this.direction = direction;
 	}
 
+	/**
+	 * Gets the packageList.
+	 * @return packageList
+	 */
 	public Collection<Package> getPackageList() {
 		return packageList;
 	}
 
+	/**
+	 * Sets the packageList.
+	 * @param packageList
+	 */
 	public void setPackageList(Collection<Package> packageList) {
 		this.packageList = packageList;
 	}
 
+	/**
+	 * Gets if the train is onGoing.
+	 * @return onGoing
+	 */
 	public boolean isOnGoing() {
 		return onGoing;
 	}
 
+	/**
+	 * Sets if the train is onGoing.
+	 * @param onGoing
+	 */
 	public void setOnGoing(boolean onGoing) {
 		this.onGoing = onGoing;
 	}

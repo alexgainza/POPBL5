@@ -1,3 +1,10 @@
+/**
+ * @file PackageAction.java
+ * @author Alex
+ * @date 15/12/2017
+ * @brief Package action
+ */
+
 package controllers;
 
 import java.util.List;
@@ -10,28 +17,49 @@ import paquete.PackageDAO;
 @SuppressWarnings("serial")
 public class PackageAction extends ActionSupport {
 
+	/** The new package. */
 	private Package paquete;
+	/** The package list. */
 	private List<Package> packageList;
-	private int id;
+	/** Class to connect the package with the database. */
 	private PackageDAO packageDAO;
 
+	/**
+	 * Gets the new package.
+	 * @return paquete
+	 */
 	public Package getPaquete() {
 		return paquete;
 	}
 
+	/**
+	 * Sets the package.
+	 * @param paquete
+	 */
 	public void setPaquete(Package paquete) {
 		this.paquete = paquete;
 	}	
 
+	/**
+	 * Initialize the packageDAO.
+	 */
 	public PackageAction() {
 		packageDAO = new PackageDAO();
 	}
 
+	/**
+	 * Load the package list from the database.
+	 * @return SUCCESS to load the jsp page.
+	 */
 	public String execute() {
 		this.packageList = packageDAO.list();
 		return SUCCESS;
 	}
 
+	/**
+	 * Add the new package to the database.
+	 * @return SUCCESS
+	 */
 	public String add() {
 		try {
 			Package paquete = getPaquete();
@@ -43,34 +71,19 @@ public class PackageAction extends ActionSupport {
 		return SUCCESS;
 	}
 
-	public String list() {
-		this.packageList = packageDAO.list();
-		return SUCCESS;
-	}
-
-	public String delete() {
-		packageDAO.delete(getId());
-		return SUCCESS;
-	}
-
-	public String edit() {
-		packageDAO.edit(getPaquete(), getPaquete().getPackageID());
-		return SUCCESS;
-	}
-
+	/**
+	 * Gets the package list.
+	 * @return packageList
+	 */
 	public List<Package> getPackageList() {
 		return packageList;
 	}
 
+	/**
+	 * Sets the list of packages.
+	 * @param packageList
+	 */
 	public void setPackageList(List<Package> packageList) {
 		this.packageList = packageList;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 }

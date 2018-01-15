@@ -1,5 +1,6 @@
 header {
 	border: 1px solid black;
+	margin: 0;
 }
 
 #mapaSection {
@@ -28,4 +29,8 @@ nav {
 .numbers {
 	background-color:lightgrey;
 	font-size: 28px;
+}
+
+#logout {
+	float: right;
 }

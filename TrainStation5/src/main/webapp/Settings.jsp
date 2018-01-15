@@ -7,7 +7,6 @@
 <title>Settings</title>
 <link rel="stylesheet" href="css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/Settings.css" />
-<script type="text/javascript" src="js/Settings.js"></script>
 </head>
 <body class="container">
 	<header class="row">
@@ -17,30 +16,23 @@
 				<img src="images/Titulo_Inicio.png" class="col-md-7">
 			</figure>
 		</div>
-		<figure id="derecha" class="col-md-4 col-md-offset-4">
-			<div class="row">
-				<img src="images/euskera.png" id="idiomas">
-				<img src="images/ingles.png" id="idiomas">
-				<img src="images/español.png" id="idiomas">
-			</div>
-			<a href="Settings.jsp"> <img src="images/settings.png" id="settings"> </a>
-		</figure>
+		<div class="col-md-7 col-md-offset-7">
+			<a href="Settings.jsp" style="float:right; margin-top: 20px;"> <img src="images/settings.png"> </a>
+		</div>
 	</header>
 	<div id="update">
 		<h2>Update profile</h2>
-		<div id="form">
-			<s:actionerror />
-			<s:form action="editUser" method="post">
-				<s:textfield id="id" name="user.userID" label="ID" />
-				<s:textfield id="name" name="user.nombre" label="First name" />
-				<s:textfield id="last" name="user.apellido" label="Last name" />
-				<s:textfield id="username" name="user.username" label="Username" />
-				<s:password id="pass" name="user.password" label="Password" />
-				<s:textfield id="role" name="user.role.roleID" label="Role" />
-				<s:submit value="Edit User" align="center" class="btn btn-primary"/>
-			</s:form>
-			<button type="button" class="btn btn-danger" onclick="javascript:history.back()">Cancel</button>
-		</div>
+		<s:actionerror />
+		<s:form action="editUser" method="post">
+			<s:textfield id="id" name="user.userID" label="ID" />
+			<s:textfield id="name" name="user.nombre" label="First name" />
+			<s:textfield id="last" name="user.apellido" label="Last name" />
+			<s:textfield id="username" name="user.username" label="Username" />
+			<s:password id="pass" name="user.password" label="Password" />
+			<s:textfield id="role" name="user.role.roleID" label="Role" />
+			<s:submit value="Edit User" align="center" class="btn btn-primary"/>
+		</s:form>
+		<button type="button" class="btn btn-danger" onclick="javascript:history.back()">Cancel</button>
 	</div>
 </body>
 </html>
