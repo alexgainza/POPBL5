@@ -7,9 +7,7 @@
 
 package controllers;
 
-import javax.servlet.http.HttpServletRequest;
 
-import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -24,12 +22,12 @@ public class LocaleAction extends ActionSupport {
 	 * @return a string to load the corresponding jsp page.
 	 */
 	public String execute() {
-		HttpServletRequest request = ServletActionContext.getRequest();
+		/*HttpServletRequest request = ServletActionContext.getRequest();
 		referer = request.getHeader("referer");
 		referer = referer.substring(referer.lastIndexOf("/") + 1);
 		if (referer.endsWith(".jsp") || referer.isEmpty()) {
 			return "LOGIN";
-		}
+		}*/
 		return SUCCESS;
 	}
 

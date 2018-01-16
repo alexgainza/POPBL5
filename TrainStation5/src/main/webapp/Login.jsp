@@ -6,10 +6,10 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="css/bootstrap.min.css" />
-<link rel="stylesheet" href="css/index.css" />
+<link rel="stylesheet" href="css/Login.css" />
 <script src="js/bootstrap.min.js"></script>
 </head>
-<body>
+<body class="container">
 		<!--<s:url var="localeEN" namespace="/" action="locale">
 			<s:param name="request_locale">localeEN</s:param>
 		</s:url>
