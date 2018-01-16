@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC
-    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
-    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.devMode" value="false" />
-	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+	<constant name="struts.custom.i18n.resources" value="global" />
 
 	<package name="json-default-package" extends="struts-default">
 		<result-types>
@@ -17,52 +17,37 @@
 				class="org.apache.struts2.json.JSONInterceptor" />
 		</interceptors>
 	</package>
-	<package name="default" extends="struts-default,json-default-package"
-		namespace="/">
-		<!--<result-types>
-			<result-type name="tiles"
-				class="org.apache.struts2.views.tiles.TilesResult" />
-		</result-types>-->
+	<package name="default" extends="struts-default,json-default-package" namespace="/">
+		<result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
 		<action name="login" class="controllers.LoginAction">
 			<result name="PHC"> <!--type="tiles"-->PHC.jsp</result>
 			<result name="Controller"> <!--type="tiles"-->StationController.jsp</result>
 			<result name="Driver"> <!--type="tiles"-->TrainDriver.jsp</result>
-			<result name="error">index.jsp</result>
+			<result name="error">Login.jsp</result>
 		</action>
-
-		<action name="add" class="controllers.PackageAction" method="add">
-			<result name="success" type="chain">index</result>
-			<result name="input" type="chain">index</result>
+		<action name="addPackage" class="controllers.PackageAction" method="add">
+			<result name="success"> <!--type="tiles" -->PHC.jsp</result>
 		</action>
-
-		<action name="delete" class="controllers.PackageAction" method="delete">
-			<result name="success" type="chain">index</result>
-		</action>
-
-		<action name="edit" class="controllers.PackageAction" method="edit">
-			<result name="success" type="chain">index</result>
-		</action>
-
-		<action name="list1" class="controllers.PackageAction" method="list">
-			<result name="success" type="chain">index</result>
-		</action>
-
-		<action name="list2" class="controllers.TrainAction" method="list">
-			<result name="success" type="chain">index</result>
-		</action>
-
-		<action name="index" class="controllers.PackageAction">
-			<result name="input">/packages.jsp</result>
-			<result name="success">packages.jsp</result>
+		<action name="editUser" class="controllers.UserAction" method="edit">
+			<result name="success"> <!--type="tiles" -->Login.jsp</result>
+			<result name="error">Settings.jsp</result>
 		</action>
 		<action name="JSONAction" class="controllers.JSONAction">
 			<result type="json" />
 		</action>
-			<result type="json" />
 		<action name="JSONActionTrain" class="controllers.JSONActionTrain">
+			<result type="json" />
 		</action>
-		<action name="sendPackage" class="controllers.SendPackage">
-			<result name="success">SendPackage.jsp</result>
+		<!--<action name="locale" class="controllers.LocaleAction">
+			<result name="SUCCESS">Login.jsp</result>
+		</action>-->
+		<action name="locale" class="controllers.LocaleAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">${referer}</param>
+			</result>
+			<result name="LOGIN">Login.jsp</result>
 		</action>
 	</package>
 </struts>

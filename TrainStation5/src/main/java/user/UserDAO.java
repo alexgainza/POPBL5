@@ -32,17 +32,12 @@ public class UserDAO {
 			return user;
 		}
 		
-		public User edit(User user, int id) {
+		public void edit(User user) {
 			Session session = HibernateUtil.createSessionFactory();
-			session.beginTransaction();
-			User user1 = session.get(User.class, id);
-			user1 = user;
-			if(user1 != null) {
-				session.update(user1);
-			}
+			session.beginTransaction();	
+			session.update(user);
 			session.getTransaction().commit();
 			session.close();
-			return user;
 		}
 		
 		// For generating , executing hibernate select query and returns packages as a

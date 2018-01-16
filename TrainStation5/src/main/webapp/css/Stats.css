@@ -1,0 +1,13 @@
+header {
+	border: 1px solid black;
+}
+
+#grafico {
+	border: 1px solid black;
+	width: 100%;
+	margin-top: 20px;	
+}
+
+h1 {
+	text-align:center;
+}
