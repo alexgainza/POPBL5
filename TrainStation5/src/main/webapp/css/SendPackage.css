@@ -1,0 +1,48 @@
+header {
+	border: 1px solid black;
+}
+
+#form1 {
+	border: 1px solid black;
+	width: 100%;
+	padding: 20 20;
+}
+
+#form2 {
+	border: 1px solid black;
+	width: 100%;
+	padding: 20 20;
+}
+
+#form3 {
+	border: 1px solid black;
+	width: 100%;
+	padding: 20 20;
+}
+
+#form4 {
+	border: 1px solid black;
+	width: 100%;
+	padding: 20 20;
+}
+
+#form5 {
+	border: 1px solid black;
+	width: 100%;
+	padding: 20 20;
+}
+
+#dropdown {
+	text-align: center;
+	margin: 20 0;
+	font-size: 24px;
+}
+
+h4 {
+	text-align: center;
+}
+
+a {
+	margin-top: 20px;
+	float: right;
+}

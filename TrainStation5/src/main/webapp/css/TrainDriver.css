@@ -1,29 +1,31 @@
-#Tren_Inicio {
-	display:inline-block;
-	width:10%;
-}
-
-#Titulo_Inicio {
-	display:inline-block;
-	width:20%;
-}
-
 header {
-	border:1px solid black;
-	width:90vw;
-	margin:50 50;
+	border: 1px solid black;
 }
 
-span {
-	font-size:20px;
-	position:relative;
-	top:25%;
-	left:40%;
+#chooseTrain {
+	margin: 50 0;
 }
 
 #info {
-	border:1px solid black;
-	height:60vh;
-	width:90vw;
-	margin:50;
+	border: 1px solid black;
+	margin-top: 20px;
+	display: none;
+	width:100%;
+}
+
+#button {
+	margin: 20 27;
+}
+
+.numbers {
+	background-color: lightgrey;
+}
+
+#stop {
+	padding: 10 20;
+}
+
+#logout {
+	margin-top: 20px;
+	float: right;
 }

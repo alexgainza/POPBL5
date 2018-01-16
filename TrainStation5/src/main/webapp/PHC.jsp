@@ -1,52 +1,70 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-
-<script>
-	<%@include file="js/jquery-1.7.1.min.js"%>
-	<%@include file="js/map.js"%>
-</script>
-
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>POPBL5</title>
-<link href="css/c3.min.css" rel="stylesheet" type="text/css" />
-<link href="css/PHC.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>PHC</title>
+
+<link rel="stylesheet" href="css/PHC.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/map.js"></script>
+<script type="text/javascript" src="js/PHC.js"></script>
 </head>
-<body>
-	<header>
-		<figure>
-			<img src="images/Tren_Inicio.png" id="Tren_Inicio">
-			<img src="images/Titulo_Inicio.png" id="Titulo_Inicio">
-		</figure>
+<body class="container">
+	<header class="row">
+		<div class="col-md-5">
+			<figure class="row">
+				<img src="images/Tren_Inicio.png" class="col-md-5">
+				<img src="images/Titulo_Inicio.png" class="col-md-7">
+			</figure>
+		</div>
+		<div class="col-md-7 col-md-offset-7">
+			<a href="Settings.jsp" style="float:right; margin-top: 20px;"> <img src="images/settings.png"> </a>
+		</div>
 	</header>
 	<nav>
-		<a href="packages.jsp" id="sendPackage">Send Package</a>
+		<a href="SendPackage.jsp" class="btn btn-success">Send Package</a>
+		<a href="Login.jsp" id="logout" class="btn btn-danger">Log Out</a>
 	</nav>
-	<div id="mapaSection">
-		<div id="trainInfo">
+	<div class="row" id="mapaSection">
+		<div class="col-md-6" id="trainInfo">
 			<h2>Train information</h2>
-			<span>Train:</span>
-			<input type="radio" name="train" onclick="setTrainMarkerVisibility(1)" /><label>Train1</label>
-			<input type="radio" name="train" onclick="setTrainMarkerVisibility(2)"/><label>Train2</label>
-			<input type="radio" name="train" onclick="setTrainMarkerVisibility(3)"/><label>Train3</label>
-			<input type="radio" name="train" onclick="setTrainMarkerVisibility(4)"/><label>Train4</label>
-			<input type="radio" name="train" onclick="setTrainMarkerVisibility(5)"/><label>Train5</label>
-			<input type="radio" name="train" onclick="setTrainMarkerVisibility(6)"/><label>Train6</label>
-			<input type="radio" name="train" onclick="showAllTrainMarkers()" checked="checked"/><label>All trains</label><br>
+			<input id="train1" type="radio" name="train"
+				onclick="setTrainMarkerVisibility(1); loadTrain();" /><label
+				id="textTrain">Train1</label> <input id="train2" type="radio"
+				name="train" onclick="setTrainMarkerVisibility(2); loadTrain();" /><label
+				id="textTrain">Train2</label> <input id="train3" type="radio"
+				name="train" onclick="setTrainMarkerVisibility(3); loadTrain();" /><label
+				id="textTrain">Train3</label> <input id="train4" type="radio"
+				name="train" onclick="setTrainMarkerVisibility(4); loadTrain();" /><label
+				id="textTrain">Train4</label> <input id="train5" type="radio"
+				name="train" onclick="setTrainMarkerVisibility(5); loadTrain();" /><label
+				id="textTrain">Train5</label> <input id="train6" type="radio"
+				name="train" onclick="setTrainMarkerVisibility(6); loadTrain();" /><label
+				id="textTrain">Train6</label> <input id="trains" type="radio"
+				name="train" onclick="showAllTrainMarkers(); loadTrain();"
+				checked="checked" /><label id="textTrain">All trains</label><br>
 			<hr>
-			<p>Station:</p>
-			<p>Rail track:</p>
-			<p>Destination:</p>
-			<p>Nº of packages:</p>
+			<label id="textStation" class="text">Station:</label><label
+				id="stationId" class="numbers"></label><br> <label
+				id="textRail" class="text">Rail track:</label><label id="railId"
+				class="numbers"></label><br> <label id="textDestination"
+				class="text">Destination:</label><label id="destinationId"
+				class="numbers"></label><br> <label id="textPackages"
+				class="text">Nº of packages:</label><label id="nPackages"
+				class="numbers"></label><br>
 		</div>
-		<div id="map"></div>
+		<div class="col-md-6">
+			<div id="map"></div>
+		</div>
 	</div>
 	<script async defer
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpWAG8QwQnVNYs3Lbm3dMhaD1fRz1QOeA&callback=initMap">	
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpWAG8QwQnVNYs3Lbm3dMhaD1fRz1QOeA&callback=initMap">
+		
 	</script>
 </body>
 </html>

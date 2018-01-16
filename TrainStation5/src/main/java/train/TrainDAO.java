@@ -1,17 +1,27 @@
+/**
+ * @file TrainDAO.java
+ * @author Alex
+ * @date 18/12/2017
+ * @brief Train DAO
+ */
+
 package train;
 
 import java.util.List;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
 import hibernate.HibernateUtil;
 
 public class TrainDAO {
-	SessionFactory sessionFactory;
-	// For adding items in the Train table.
+
+	/**
+	 * Add the train in the database.
+	 * @param train
+	 * The train
+	 * @return train
+	 */
 	public Train add(Train train) {
 		Session session = HibernateUtil.createSessionFactory();
 		session.beginTransaction();
@@ -21,26 +31,13 @@ public class TrainDAO {
 		return train;
 	}
 
-	// For deleting item from Train table.
-	public Train delete(int id) {
-		Session session = HibernateUtil.createSessionFactory();
-		session.beginTransaction();
-		Train train = (Train) session.load(Train.class, id);
-		if (null != train) {
-			session.delete(train);
-		}
-		session.getTransaction().commit();
-		session.close();
-		return train;
-	}
-
-	// For generating , executing hibernate select query and returns trains as a
-	// list.
+	/**
+	 * Gets the train list from the database.
+	 * @return trains
+	 */
 	@SuppressWarnings("unchecked")
 	public List<Train> list() {
-		//Session session = HibernateUtil.createSessionFactory();
-		sessionFactory = new Configuration().configure().buildSessionFactory();
-		Session session = sessionFactory.openSession();
+		Session session = HibernateUtil.createSessionFactory();
 		session.beginTransaction();
 		List<Train> trains = null;
 		try {
