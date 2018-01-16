@@ -26,7 +26,6 @@ import paquete.Package;
 import rail.Rail;
 import station.Station;
 
-@SuppressWarnings("serial")
 @Entity
 @Table(name = "Train")
 public class Train implements Serializable {
@@ -61,8 +60,11 @@ public class Train implements Serializable {
 	/**
 	 * The constructor.
 	 * @param trainID
+	 * The trainID
 	 * @param station
+	 * The station
 	 * @param direction
+	 * The direction
 	 */
 	public Train(int trainID, Station station, int direction) {
 		this.trainID = trainID;
@@ -81,6 +83,7 @@ public class Train implements Serializable {
 	/**
 	 * Sets the trainID.
 	 * @param trainID
+	 * The new trainID
 	 */
 	public void setTrainID(int trainID) {
 		this.trainID = trainID;
@@ -97,6 +100,7 @@ public class Train implements Serializable {
 	/**
 	 * Sets the station.
 	 * @param station
+	 * The new station
 	 */
 	public void setStation(Station station) {
 		this.station = station;
@@ -113,6 +117,7 @@ public class Train implements Serializable {
 	/**
 	 * Sets the rail.
 	 * @param rail
+	 * The new rail
 	 */
 	public void setRail(Rail rail) {
 		this.rail = rail;
@@ -129,6 +134,7 @@ public class Train implements Serializable {
 	/**
 	 * Sets the direction.
 	 * @param direction
+	 * The new direction
 	 */
 	public void setDirection(int direction) {
 		this.direction = direction;
@@ -145,6 +151,7 @@ public class Train implements Serializable {
 	/**
 	 * Sets the packageList.
 	 * @param packageList
+	 * The new packageList
 	 */
 	public void setPackageList(Collection<Package> packageList) {
 		this.packageList = packageList;
@@ -161,6 +168,7 @@ public class Train implements Serializable {
 	/**
 	 * Sets if the train is onGoing.
 	 * @param onGoing
+	 * The new onGoing
 	 */
 	public void setOnGoing(boolean onGoing) {
 		this.onGoing = onGoing;

@@ -42,6 +42,7 @@ public class JSONAction {
 	/**
 	 * Sets the new station list.
 	 * @param stationList
+	 * The stationList
 	 */
 	public void setStationList(List<Station> stationList) {
 		this.stationList = stationList;
@@ -58,6 +59,7 @@ public class JSONAction {
 	/**
 	 * Sets the new rails list.
 	 * @param railList
+	 * The railList
 	 */
 	public void setRailList(List<Rail> railList) {
 		this.railList = railList;
@@ -74,6 +76,7 @@ public class JSONAction {
 	/**
 	 * Sets the new train list.
 	 * @param trainList
+	 * The trainList
 	 */
 	public void setTrainList(List<Train> trainList) {
 		this.trainList = trainList;
@@ -83,6 +86,7 @@ public class JSONAction {
 	 * Reads the stations, rails and trains lists from the database
 	 * @return a string that the lists are load correctly
 	 * @throws Exception
+	 * The exception
 	 */
 	public String execute() throws Exception {
 

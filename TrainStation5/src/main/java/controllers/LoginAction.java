@@ -63,6 +63,7 @@ public class LoginAction extends ActionSupport {
 	/**
 	 * Sets the entered username.
 	 * @param username
+	 * The username
 	 */
 	public void setUsername(String username) {
 		this.username = username;
@@ -79,6 +80,7 @@ public class LoginAction extends ActionSupport {
 	/**
 	 * Sets the entered password.
 	 * @param password
+	 * The password
 	 */
 	public void setPassword(String password) {
 		this.password = password;

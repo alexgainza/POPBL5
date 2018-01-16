@@ -74,13 +74,21 @@ public class Station implements Serializable {
 	/**
 	 * The constructor.
 	 * @param stationID
+	 * The stationID
 	 * @param description
+	 * The description
 	 * @param exitSwitch
+	 * The exitSwitch
 	 * @param entrySwitch
+	 * The entrySwitch
 	 * @param coordinatesLat
+	 * The coordinatesLat
 	 * @param coordinatesLng
+	 * The coordinatesLng
 	 * @param nextStation
+	 * The nextStation
 	 * @param previousStation
+	 * The previousStation
 	 */
 	public Station(int stationID, String description, int exitSwitch, int entrySwitch, double coordinatesLat, double coordinatesLng, Station nextStation,
 			Station previousStation) {
@@ -105,6 +113,7 @@ public class Station implements Serializable {
 	/**
 	 * Sets the stationID.
 	 * @param stationID
+	 * The stationID
 	 */
 	public void setStationID(int stationID) {
 		this.stationID = stationID;
@@ -121,6 +130,7 @@ public class Station implements Serializable {
 	/**
 	 * Sets the description.
 	 * @param description
+	 * The description
 	 */
 	public void setDescription(String description) {
 		this.description = description;
@@ -137,6 +147,7 @@ public class Station implements Serializable {
 	/**
 	 * Sets the nextStation.
 	 * @param nextStation
+	 * The nextStation
 	 */
 	public void setNextStation(Station nextStation) {
 		this.nextStation = nextStation;
@@ -153,6 +164,7 @@ public class Station implements Serializable {
 	/**
 	 * Sets the previousStation.
 	 * @param previousStation
+	 * The previousStation
 	 */
 	public void setPreviousStation(Station previousStation) {
 		this.previousStation = previousStation;
@@ -169,6 +181,7 @@ public class Station implements Serializable {
 	/**
 	 * Sets the exitSwitch.
 	 * @param exitSwitch
+	 * The exitSwitch
 	 */
 	public void setExitSwitch(int exitSwitch) {
 		this.exitSwitch = exitSwitch;
@@ -185,6 +198,7 @@ public class Station implements Serializable {
 	/**
 	 * Sets the entrySwitch.
 	 * @param entrySwitch
+	 * The entrySwitch
 	 */
 	public void setEntrySwitch(int entrySwitch) {
 		this.entrySwitch = entrySwitch;
@@ -201,6 +215,7 @@ public class Station implements Serializable {
 	/**
 	 * Sets the parks.
 	 * @param parks
+	 * The parks
 	 */
 	public void setParks(Collection<Train> parks) {
 		this.parks = parks;
@@ -217,6 +232,7 @@ public class Station implements Serializable {
 	/**
 	 * Sets the coordinatesLat.
 	 * @param coordinatesLat
+	 * The coordinatesLat
 	 */
 	public void setCoordinatesLat(double coordinatesLat) {
 		this.coordinatesLat = coordinatesLat;
@@ -233,6 +249,7 @@ public class Station implements Serializable {
 	/**
 	 * Sets the coordinatesLng.
 	 * @param coordinatesLng
+	 * The coordinatesLng
 	 */
 	public void setCoordinatesLng(double coordinatesLng) {
 		this.coordinatesLng = coordinatesLng;
@@ -249,6 +266,7 @@ public class Station implements Serializable {
 	/**
 	 * Sets the sendPackageList.
 	 * @param sendPackageList
+	 * The sendPackageList
 	 */
 	public void setSendPackageList(Collection<Package> sendPackageList) {
 		this.sendPackageList = sendPackageList;
@@ -265,6 +283,7 @@ public class Station implements Serializable {
 	/**
 	 * Sets the deliveredPackageList.
 	 * @param deliveredPackageList
+	 * The deliveredPackageList
 	 */
 	public void setDeliveredPackageList(Collection<Package> deliveredPackageList) {
 		this.deliveredPackageList = deliveredPackageList;

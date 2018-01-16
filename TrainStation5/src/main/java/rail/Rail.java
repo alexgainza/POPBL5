@@ -50,9 +50,13 @@ public class Rail implements Serializable {
 	/**
 	 * The constructor.
 	 * @param railID
+	 * The railID
 	 * @param previousStation
+	 * The previousStation
 	 * @param nextStation
+	 * The nextStation
 	 * @param occupied
+	 * The occupied
 	 */
 	public Rail(int railID, Station previousStation, Station nextStation, boolean occupied) {
 		this.railID = railID;
@@ -72,6 +76,7 @@ public class Rail implements Serializable {
 	/**
 	 * Sets the railID.
 	 * @param railID
+	 * The railID
 	 */
 	public void setRailID(int railID) {
 		this.railID = railID;
@@ -88,6 +93,7 @@ public class Rail implements Serializable {
 	/**
 	 * Sets if the rail is occupied.
 	 * @param occupied
+	 * The occupied
 	 */
 	public void setOccupied(boolean occupied) {
 		this.occupied = occupied;
@@ -104,6 +110,7 @@ public class Rail implements Serializable {
 	/**
 	 * Sets the previousStation.
 	 * @param previousStation
+	 * The previousStation
 	 */
 	public void setPreviousStation(Station previousStation) {
 		this.previousStation = previousStation;
@@ -120,6 +127,7 @@ public class Rail implements Serializable {
 	/**
 	 * Sets the nextStation.
 	 * @param nextStation
+	 * The nextStation
 	 */
 	public void setNextStation(Station nextStation) {
 		this.nextStation = nextStation;

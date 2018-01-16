@@ -19,6 +19,7 @@ public class RailDAO {
 	/**
 	 * Add the rail in the database.
 	 * @param rail
+	 * The rail
 	 * @return rail
 	 */
 	public Rail add(Rail rail) {

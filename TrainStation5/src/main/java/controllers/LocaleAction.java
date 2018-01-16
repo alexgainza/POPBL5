@@ -42,8 +42,9 @@ public class LocaleAction extends ActionSupport {
 	}
 
 	/**
-	 * Sets the entered jsp page
-	 * @param the referer
+	 * Sets the referer
+	 * @param referer
+	 * The referer
 	 */
 	public void setReferer(String referer) {
 		this.referer = referer;

@@ -57,8 +57,11 @@ public class Package implements Serializable {
 	/**
 	 * The constructor.
 	 * @param origin
+	 * The origin
 	 * @param destination
+	 * The destination
 	 * @param description
+	 * The description
 	 */
 	public Package(Station origin, Station destination, String description) {
 		this.origin = origin;
@@ -80,6 +83,7 @@ public class Package implements Serializable {
 	/**
 	 * Sets the packageID.
 	 * @param packageID
+	 * The packageID
 	 */
 	public void setPackageID(int packageID) {
 		this.packageID = packageID;
@@ -96,6 +100,7 @@ public class Package implements Serializable {
 	/**
 	 * Sets the origin.
 	 * @param origin
+	 * The origin
 	 */
 	public void setOrigin(Station origin) {
 		this.origin = origin;
@@ -112,6 +117,7 @@ public class Package implements Serializable {
 	/**
 	 * Sets the destination.
 	 * @param destination
+	 * The destination
 	 */
 	public void setDestination(Station destination) {
 		this.destination = destination;
@@ -128,6 +134,7 @@ public class Package implements Serializable {
 	/**
 	 * Sets the description.
 	 * @param description
+	 * The description
 	 */
 	public void setDescription(String description) {
 		this.description = description;
@@ -144,6 +151,7 @@ public class Package implements Serializable {
 	/**
 	 * Sets the packageState.
 	 * @param packageState
+	 * The packageState
 	 */
 	public void setPackageState(int packageState) {
 		this.packageState = packageState;
@@ -160,6 +168,7 @@ public class Package implements Serializable {
 	/**
 	 * Sets the sendDate.
 	 * @param sendDate
+	 * The sendDate
 	 */
 	public void setSendDate(Date sendDate) {
 		this.sendDate = sendDate;
@@ -176,6 +185,7 @@ public class Package implements Serializable {
 	/**
 	 * Sets if the package is assigned.
 	 * @param asignadoTren
+	 * The assigned train
 	 */
 	public void setAsignadoTren(boolean asignadoTren) {
 		this.asignadoTren = asignadoTren;
@@ -192,6 +202,7 @@ public class Package implements Serializable {
 	/**
 	 * Sets the takeTrain.
 	 * @param takeTrain
+	 * The takeTrain
 	 */
 	public void setTakeTrain(Train takeTrain) {
 		this.takeTrain = takeTrain;

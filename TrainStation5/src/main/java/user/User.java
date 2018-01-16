@@ -58,6 +58,7 @@ public class User implements Serializable {
 	/**
 	 * Sets the userID.
 	 * @param userID
+	 * The userID
 	 */
 	public void setUserID(int userID) {
 		this.userID = userID;
@@ -74,6 +75,7 @@ public class User implements Serializable {
 	/**
 	 * Sets the name.
 	 * @param nombre
+	 * The name
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -90,6 +92,7 @@ public class User implements Serializable {
 	/**
 	 * Sets the last name.
 	 * @param apellido
+	 * The last name
 	 */
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
@@ -106,6 +109,7 @@ public class User implements Serializable {
 	/**
 	 * Sets the username.
 	 * @param username
+	 * The username
 	 */
 	public void setUsername(String username) {
 		this.username = username;
@@ -122,6 +126,7 @@ public class User implements Serializable {
 	/**
 	 * Sets the password.
 	 * @param password
+	 * The password
 	 */
 	public void setPassword(String password) {
 		this.password = password;
@@ -138,6 +143,7 @@ public class User implements Serializable {
 	/**
 	 * Sets the role.
 	 * @param role
+	 * The role
 	 */
 	public void setRole(Role role) {
 		this.role = role;

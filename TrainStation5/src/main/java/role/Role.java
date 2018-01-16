@@ -41,6 +41,7 @@ public class Role implements Serializable {
 	/**
 	 * Sets the roleID
 	 * @param roleID
+	 * The roleID
 	 */
 	public void setRoleID(int roleID) {
 		this.roleID = roleID;
@@ -57,6 +58,7 @@ public class Role implements Serializable {
 	/**
 	 * Sets the description.
 	 * @param description
+	 * The description
 	 */
 	public void setDescription(String description) {
 		this.description = description;

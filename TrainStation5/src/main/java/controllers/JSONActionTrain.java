@@ -43,6 +43,7 @@ public class JSONActionTrain {
 	 * Reads the trains list from the database
 	 * @return a string that the list is load correctly
 	 * @throws Exception
+	 * The exception
 	 */
 	public String execute() throws Exception {
 

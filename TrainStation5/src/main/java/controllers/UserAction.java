@@ -77,6 +77,7 @@ public class UserAction extends ActionSupport {
 	/**
 	 * Sets the user.
 	 * @param user
+	 * The user
 	 */
 	public void setUser(User user) {
 		this.user = user;

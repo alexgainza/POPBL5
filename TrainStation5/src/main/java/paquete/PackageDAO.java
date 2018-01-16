@@ -19,6 +19,7 @@ public class PackageDAO {
 	/**
 	 * Add the package in database.
 	 * @param paquete
+	 * The package
 	 * @return paquete
 	 */
 	public Package add(Package paquete) {

@@ -35,6 +35,7 @@ public class PackageAction extends ActionSupport {
 	/**
 	 * Sets the package.
 	 * @param paquete
+	 * The package
 	 */
 	public void setPaquete(Package paquete) {
 		this.paquete = paquete;
@@ -82,6 +83,7 @@ public class PackageAction extends ActionSupport {
 	/**
 	 * Sets the list of packages.
 	 * @param packageList
+	 * The packageList
 	 */
 	public void setPackageList(List<Package> packageList) {
 		this.packageList = packageList;

@@ -20,6 +20,7 @@ public class RoleDAO {
 	 * Add the role in database.
 	 * 
 	 * @param role
+	 * The role
 	 * @return role
 	 */
 	public Role add(Role role) {
