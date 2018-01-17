@@ -32,14 +32,14 @@ public class UserAction extends ActionSupport {
 	 * @return a string that depends if the entered user is correct.  
 	 */
 	public String edit() {
+		boolean correct = false;
 		for(int i = 0; i < userDAO.list().size(); i++) {
-			if(getUser().getUserID() != userDAO.list().get(i).getUserID()) {
-				addActionError(getText("error.update"));
-				return "error";
+			if(getUser().getUserID() == userDAO.list().get(i).getUserID()) {
+				correct = true;
 			}
 		}
-		if(getUser().getUserID() == 0) {
-			addActionError(getText("error.emptyBlank"));
+		if(!correct) {
+			addActionError(getText("error.update"));
 			return "error";
 		}
 		else if(getUser().getNombre().equals("")) {
