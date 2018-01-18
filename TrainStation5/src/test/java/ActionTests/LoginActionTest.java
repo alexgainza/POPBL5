@@ -29,13 +29,29 @@ public class LoginActionTest{
 	}
 
 	@Test
-	public void testIncorrectLogin() {
-		loginAction.setUsername("XantiAitorAlex");
-		loginAction.setPassword("incorrect");
+	public void testIncorrectUserLogin() {
+		loginAction.setUsername("incorrect");
+		loginAction.setPassword("1111");
 		loginAction.execute();
 		assertEquals(1, loginAction.getActionErrors().size());
 	}
 
+	@Test
+	public void testIncorrectPasswordLogin() {
+		loginAction.setUsername("xantileonet");
+		loginAction.setPassword("incorrect");
+		loginAction.execute();
+		assertEquals(1, loginAction.getActionErrors().size());
+	}
+	
+	@Test
+	public void testIncorrectRole() {
+		loginAction.setUsername("xantileonet");
+		loginAction.setPassword("incorrect");
+		loginAction.execute();
+		assertEquals(1, loginAction.getActionErrors().size());
+	}
+	
 	@Test
 	public void testCorrectLoginPHC() {
 		loginAction.setUsername("xantileonet");
@@ -47,13 +63,13 @@ public class LoginActionTest{
 	public void testCorrectLoginController() {
 		loginAction.setUsername("alexgainza");
 		loginAction.setPassword("1111");
-		assertEquals("Controller", loginAction.execute());
+		assertEquals("Driver", loginAction.execute());
 	}
 
 	@Test
 	public void testCorrectLoginDriver() {
 		loginAction.setUsername("aitorvidarte");
 		loginAction.setPassword("3333");
-		assertEquals("Driver", loginAction.execute());
+		assertEquals("Controller", loginAction.execute());
 	}
 }

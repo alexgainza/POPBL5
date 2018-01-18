@@ -94,7 +94,7 @@ public class UserActionTest extends TestCase {
 		newUser.setNombre(nombre);
 		newUser.setApellido(apellido);
 		newUser.setPassword(password);
-		newUser.setUsername("username");	
+		newUser.setUsername(username);	
 		newUser.setRole(role);
 		return newUser;
 	}
