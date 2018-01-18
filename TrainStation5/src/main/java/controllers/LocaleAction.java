@@ -7,8 +7,6 @@
 
 package controllers;
 
-
-
 import com.opensymphony.xwork2.ActionSupport;
 
 @SuppressWarnings("serial")

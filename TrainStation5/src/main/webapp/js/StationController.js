@@ -11,7 +11,8 @@ function loadRails() {
 				box.style.backgroundColor = "red";
 			}
 		}
-	})
+	}),
+	setInterval('loadRails()', 10000);
 }
 
 function loadTrains() {
@@ -26,7 +27,8 @@ function loadTrains() {
 			var stationId = document.getElementById("stationId" + i)
 			var textParking = document.getElementById("textParking" + i)
 			var parkingId = document.getElementById("parkingId" + i)
-			var textDestination = document.getElementById("textDestination" + i)
+			var textDestination = document
+					.getElementById("textDestination" + i)
 			var destinationId = document.getElementById("destinationId" + i)
 			var textRail = document.getElementById("textRail" + i)
 			var railId = document.getElementById("railId" + i)
@@ -68,7 +70,8 @@ function loadTrains() {
 				railId.style.display = "none";
 			}
 		}
-	})
+	}),
+	setInterval('loadTrains()', 10000);
 }
 
 function loadStations() {
@@ -83,7 +86,8 @@ function loadStations() {
 				box.style.backgroundColor = "green";
 			}
 		}
-	})
+	}),
+	setInterval('loadStations()', 10000);
 }
 
 window.onLoad = loadRails();

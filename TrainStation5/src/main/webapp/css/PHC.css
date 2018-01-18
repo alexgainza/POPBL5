@@ -1,16 +1,15 @@
 header {
 	border: 1px solid black;
-	margin: 0;
 }
 
 #mapaSection {
 	border: 1px solid black;
 	text-align:center;
-	margin: 0;
+	margin: 0px;
 }
 
 #textTrain {
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .text {
@@ -18,13 +17,13 @@ header {
 }
 
 #map {
-	height: 80%;
+	height: 90%;
 	margin-top: 20px;
 	
 }
 
 nav {
-	margin: 20 0;
+	margin: 20px 0px;
 }
 
 .numbers {
@@ -34,4 +33,9 @@ nav {
 
 #logout {
 	float: right;
+	margin: 20px 0px;
+}
+
+#boton {
+	margin: 20px 0px;
 }

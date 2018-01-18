@@ -17,6 +17,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import station.Station;
 import train.Train;
 
@@ -33,10 +37,12 @@ public class Package implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int packageID;
 	/** The origin station of the package. */
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Station origin;
 	/** The destination station of the package. */
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Station destination;
 	/** The description of the package. */
 	private String description;
@@ -47,7 +53,8 @@ public class Package implements Serializable {
 	/** If the package is assigned to a train or not. */
 	private boolean asignadoTren;
 	/** The train where the package is. */
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Train takeTrain;
 
 	

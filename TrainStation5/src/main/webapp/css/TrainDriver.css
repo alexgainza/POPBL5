@@ -3,7 +3,7 @@ header {
 }
 
 #chooseTrain {
-	margin: 50 0;
+	margin-top: 50px;
 }
 
 #info {
@@ -14,7 +14,7 @@ header {
 }
 
 #button {
-	margin: 20 27;
+	margin: 20px 27px;
 }
 
 .numbers {

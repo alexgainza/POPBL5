@@ -1,5 +1,22 @@
 @media ( min-width :768px) {
 	.container {
 		width:600;
+		padding-top: 160px;
+	}
+}
+
+#login {
+	margin-left: 14%;
+}
+
+@media ( max-width :768px) {
+	#login {
+		margin-left: 0;
+	}
+	#Titulo_Inicio {
+		width: 100%;
+	}
+	#Tren_Inicio {
+		margin-left: 24%;
 	}
 }

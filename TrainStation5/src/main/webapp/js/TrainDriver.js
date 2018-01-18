@@ -10,9 +10,7 @@ function train1() {
 	$.getJSON('JSONAction.action', function(data) {
 		trains = data.trainList;
 		stations = data.stationList;
-		console.log(stations.sendPackageList);
 		
-		var nPackagesIn = document.getElementById("nPackagesIn");
 		var nPackagesOut = document.getElementById("nPackagesOut");
 		var stationId = document.getElementById("stationId");
 		var destinationId = document.getElementById("destinationId");
@@ -42,7 +40,8 @@ function train1() {
 		else {
 			stop.style.backgroundColor = "green";
 		}
-	})
+	}),
+	setInterval('train1()', 10000);
 }
 
 function train2() {
@@ -55,9 +54,7 @@ function train2() {
 	$.getJSON('JSONAction.action', function(data) {
 		trains = data.trainList;
 		stations = data.stationList;
-		console.log(stations.sendPackageList);
 		
-		var nPackagesIn = document.getElementById("nPackagesIn");
 		var nPackagesOut = document.getElementById("nPackagesOut");
 		var stationId = document.getElementById("stationId");
 		var destinationId = document.getElementById("destinationId");
@@ -86,7 +83,8 @@ function train2() {
 		else {
 			stop.style.backgroundColor = "green";
 		}
-	})
+	}),
+	setInterval('train2()', 10000);
 }
 
 function train3() {
@@ -99,9 +97,7 @@ function train3() {
 	$.getJSON('JSONAction.action', function(data) {
 		trains = data.trainList;
 		stations = data.stationList;
-		console.log(stations.sendPackageList);
 		
-		var nPackagesIn = document.getElementById("nPackagesIn");
 		var nPackagesOut = document.getElementById("nPackagesOut");
 		var stationId = document.getElementById("stationId");
 		var destinationId = document.getElementById("destinationId");
@@ -130,7 +126,8 @@ function train3() {
 		else {
 			stop.style.backgroundColor = "green";
 		}
-	})
+	}),
+	setInterval('train3()', 10000);
 }
 
 function train4() {
@@ -143,9 +140,7 @@ function train4() {
 	$.getJSON('JSONAction.action', function(data) {
 		trains = data.trainList;
 		stations = data.stationList;
-		console.log(stations.sendPackageList);
 		
-		var nPackagesIn = document.getElementById("nPackagesIn");
 		var nPackagesOut = document.getElementById("nPackagesOut");
 		var stationId = document.getElementById("stationId");
 		var destinationId = document.getElementById("destinationId");
@@ -174,7 +169,8 @@ function train4() {
 		else {
 			stop.style.backgroundColor = "green";
 		}
-	})
+	}),
+	setInterval('train4()', 10000);
 }
 
 function train5() {
@@ -187,9 +183,7 @@ function train5() {
 	$.getJSON('JSONAction.action', function(data) {
 		trains = data.trainList;
 		stations = data.stationList;
-		console.log(stations.sendPackageList);
 		
-		var nPackagesIn = document.getElementById("nPackagesIn");
 		var nPackagesOut = document.getElementById("nPackagesOut");
 		var stationId = document.getElementById("stationId");
 		var destinationId = document.getElementById("destinationId");
@@ -218,7 +212,8 @@ function train5() {
 		else {
 			stop.style.backgroundColor = "green";
 		}
-	})
+	}),
+	setInterval('train5()', 10000);
 }
 
 function train6() {
@@ -231,9 +226,7 @@ function train6() {
 	$.getJSON('JSONAction.action', function(data) {
 		trains = data.trainList;
 		stations = data.stationList;
-		console.log(stations.sendPackageList);
 		
-		var nPackagesIn = document.getElementById("nPackagesIn");
 		var nPackagesOut = document.getElementById("nPackagesOut");
 		var stationId = document.getElementById("stationId");
 		var destinationId = document.getElementById("destinationId");
@@ -262,5 +255,6 @@ function train6() {
 		else {
 			stop.style.backgroundColor = "green";
 		}
-	})
+	}),
+	setInterval('train6()', 10000);
 }

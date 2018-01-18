@@ -880,25 +880,25 @@ pre code {
 
 @media ( min-width :576px) {
 	.container {
-		padding: 20 15 20 15;
+		padding: 20px 15px 20px 15px;
 	}
 }
 
 @media ( min-width :768px) {
 	.container {
-		padding: 40 15 40 15;
+		padding: 40px 15px 40px 15px;
 	}
 }
 
 @media ( min-width :992px) {
 	.container {
-		padding: 60 15 60 15;
+		padding: 60px 15px 60px 15px;
 	}
 }
 
 @media ( min-width :1200px) {
 	.container {
-		padding: 80 15 80 15;
+		padding: 80px 15px 80px 15px;
 	}
 }
 

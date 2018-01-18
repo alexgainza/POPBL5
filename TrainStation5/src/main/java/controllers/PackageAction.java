@@ -59,17 +59,18 @@ public class PackageAction extends ActionSupport {
 
 	/**
 	 * Add the new package to the database.
-	 * @return SUCCESS
+	 * @return success
 	 */
 	public String add() {
 		try {
 			Package paquete = getPaquete();
+			paquete.setPackageState(3);
 			packageDAO.add(paquete);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		this.packageList = packageDAO.list();
-		return SUCCESS;
+		return "success";
 	}
 
 	/**

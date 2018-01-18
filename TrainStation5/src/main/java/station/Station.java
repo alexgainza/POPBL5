@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -42,10 +41,12 @@ public class Station implements Serializable {
 	/** The description. */
 	private String description;
 	/** The next station. */
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Station nextStation;
 	/** The previous station. */
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Station previousStation;
 	/** The exit switch. */
 	private int exitSwitch;

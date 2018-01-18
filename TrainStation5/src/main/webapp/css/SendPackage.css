@@ -5,36 +5,41 @@ header {
 #form1 {
 	border: 1px solid black;
 	width: 100%;
-	padding: 20 20;
+	padding: 20px 20px;
+	margin-top: 20px;
 }
 
 #form2 {
 	border: 1px solid black;
 	width: 100%;
-	padding: 20 20;
+	padding: 20px 20px;
+	margin-top: 20px;
 }
 
 #form3 {
 	border: 1px solid black;
 	width: 100%;
-	padding: 20 20;
+	padding: 20px 20px;
+	margin-top: 20px;
 }
 
 #form4 {
 	border: 1px solid black;
 	width: 100%;
-	padding: 20 20;
+	padding: 20px 20px;
+	margin-top: 20px;
 }
 
 #form5 {
 	border: 1px solid black;
 	width: 100%;
-	padding: 20 20;
+	padding: 20px 20px;
+	margin-top: 20px;
 }
 
 #dropdown {
 	text-align: center;
-	margin: 20 0;
+	margin-top: 20px;
 	font-size: 24px;
 }
 
@@ -42,7 +47,7 @@ h4 {
 	text-align: center;
 }
 
-a {
+#exit {
 	margin-top: 20px;
 	float: right;
 }

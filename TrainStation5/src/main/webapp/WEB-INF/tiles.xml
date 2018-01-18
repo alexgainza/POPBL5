@@ -20,4 +20,16 @@
 		<put-attribute name="title" value="Train Driver" />
 		<put-attribute name="body" value="/TrainDriver.jsp" />
 	</definition>
+	<definition name="/SendPackage" extends="baseLayout">
+		<put-attribute name="title" value="Send Package" />
+		<put-attribute name="body" value="/SendPackage.jsp" />
+	</definition>
+	<definition name="/Stats" extends="baseLayout">
+		<put-attribute name="title" value="Stats" />
+		<put-attribute name="body" value="/Stats.jsp" />
+	</definition>
+	<definition name="/Settings" extends="baseLayout">
+		<put-attribute name="title" value="Update profile" />
+		<put-attribute name="body" value="/Settings.jsp" />
+	</definition>
 </tiles-definitions>

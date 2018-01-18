@@ -3,5 +3,9 @@ header {
 }
 
 #update {
-	margin: 20 0;
+	margin: 20px 0px;
+}
+
+#button {
+	margin-top: 10px;
 }

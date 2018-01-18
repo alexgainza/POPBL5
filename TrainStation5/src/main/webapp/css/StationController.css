@@ -6,13 +6,38 @@ header {
 	background-color: lightgrey;
 }
 
-#map {
-	height: 55vh;
-	width: 45vw;
-	margin: 20 20;
+#mapa {
+	margin-top: 20px;
 }
 
-#statsButton {
+#map {
+	height: 55vh;
+	width: 99%;
+	margin: 20px 5px;
+}
+
+#buttons {
 	float: right;
-	margin: 20 5;
+	margin: 20px 5px;
+}
+
+.box {
+	padding: 10px 20px;
+}
+
+.box1 {
+	padding: 10px 20px;
+	margin-top: 8px;
+}
+
+.border {
+	border: 1px solid black;
+}
+
+#rails {
+	padding-left: 0px;
+}
+
+#station {
+	padding-right: 0px;
 }
