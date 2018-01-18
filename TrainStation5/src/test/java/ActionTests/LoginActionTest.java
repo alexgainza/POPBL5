@@ -63,13 +63,13 @@ public class LoginActionTest{
 	public void testCorrectLoginController() {
 		loginAction.setUsername("alexgainza");
 		loginAction.setPassword("1111");
-		assertEquals("Driver", loginAction.execute());
+		assertEquals("Controller", loginAction.execute());
 	}
 
 	@Test
 	public void testCorrectLoginDriver() {
 		loginAction.setUsername("aitorvidarte");
 		loginAction.setPassword("3333");
-		assertEquals("Controller", loginAction.execute());
+		assertEquals("Driver", loginAction.execute());
 	}
 }
