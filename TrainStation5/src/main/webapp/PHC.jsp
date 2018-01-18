@@ -14,11 +14,13 @@
 <script type="text/javascript" src="js/map.js"></script>
 <script type="text/javascript" src="js/PHC.js"></script>
 </head>
-<body class="container">
-	<nav>
-		<a href="SendPackage.jsp" id="boton" class="btn btn-success">Send Package</a>
-		<a href="Login.jsp" id="logout" class="btn btn-danger">Log Out</a>
-	</nav>
+<body>
+	<s:form action="logout" method="post" id="logout">
+		<s:submit method="execute" value="Logout" align="center" id="submit" class="btn btn-danger" />
+	</s:form>
+	<s:form action="send" method="post" id="boton">
+		<s:submit method="execute" value="Send Package" align="center" id="submit" class="btn btn-success" />
+	</s:form>
 	<div class="row" id="mapaSection">
 		<div class="col-md-6" id="trainInfo">
 			<h2>Train information</h2>

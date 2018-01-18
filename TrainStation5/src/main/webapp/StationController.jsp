@@ -14,8 +14,12 @@
 </head>
 <body>
 	<div>
-		<a href="Login.jsp" id="statsButton" class="btn btn-danger">Log Out</a>
-		<a href="Stats.jsp" id="statsButton" class="btn btn-primary">See stats</a>
+		<s:form action="logout" method="post" id="buttons">
+			<s:submit method="execute" value="Logout" align="center" id="submit" class="btn btn-danger" />
+		</s:form>
+		<s:form action="stats" method="post" id="buttons">
+			<s:submit method="execute" value="See Stats" align="center" id="submit" class="btn btn-primary" />
+		</s:form>
 	</div>
 	<div>
 		<div id="mapa">

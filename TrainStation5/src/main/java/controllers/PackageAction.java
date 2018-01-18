@@ -64,6 +64,7 @@ public class PackageAction extends ActionSupport {
 	public String add() {
 		try {
 			Package paquete = getPaquete();
+			paquete.setPackageState(3);
 			packageDAO.add(paquete);
 		} catch (Exception e) {
 			e.printStackTrace();

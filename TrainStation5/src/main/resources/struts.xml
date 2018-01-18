@@ -27,6 +27,24 @@
 			<result name="Driver" type="tiles">/Driver</result>
 			<result name="error">Login.jsp</result>
 		</action>
+		<action name="exit" class="controllers.PageAction" method="exitPackage">
+			<result name="success" type="tiles">/PHC</result>
+		</action>
+		<action name="exitCon" class="controllers.PageAction" method="exitPackage">
+			<result name="success" type="tiles">/Controller</result>
+		</action>
+		<action name="send" class="controllers.PageAction" method="sendPackage">
+			<result name="success" type="tiles">/SendPackage</result>
+		</action>
+		<action name="logout" class="controllers.PageAction" method="logout">
+			<result name="success">Login.jsp</result>
+		</action>
+		<action name="stats" class="controllers.PageAction" method="seeStats">
+			<result name="success" type="tiles">/Stats</result>
+		</action>
+		<action name="settings" class="controllers.PageAction" method="settings">
+			<result name="success" type="tiles">/Settings</result>
+		</action>
 		<action name="addPackage" class="controllers.PackageAction" method="add">
 			<result name="success" type="tiles">/PHC</result>
 		</action>

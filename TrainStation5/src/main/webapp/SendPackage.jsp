@@ -7,19 +7,10 @@
 <link rel="stylesheet" href="css/SendPackage.css" />
 <script type="text/javascript" src="js/SendPackage.js"></script>
 </head>
-<body class="container">
-	<header class="row">
-		<div class="col-md-5">
-			<figure class="row">
-				<img src="images/Tren_Inicio.png" class="col-md-5">
-				<img src="images/Titulo_Inicio.png" class="col-md-7">
-			</figure>
-		</div>
-		<div class="col-md-7 col-md-offset-7">
-			<a href="Settings.jsp" style="float:right; margin-top: 20px;"> <img src="images/settings.png"> </a>
-		</div>
-	</header>
-	<a href="PHC.jsp" class="btn btn-danger">Exit</a>
+<body>
+	<s:form action="exit" method="post" id="exit">
+			<s:submit method="execute" value="Exit" align="center" id="submit" class="btn btn-danger" />
+	</s:form>
 	<div id="dropdown">
 		<label>Number of packages: </label> <select id="numbersList" onchange="getNumberPackages()">
 			<option value="0">0</option>

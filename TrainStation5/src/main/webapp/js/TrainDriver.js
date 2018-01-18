@@ -10,9 +10,7 @@ function train1() {
 	$.getJSON('JSONAction.action', function(data) {
 		trains = data.trainList;
 		stations = data.stationList;
-		console.log(stations.sendPackageList);
 		
-		var nPackagesIn = document.getElementById("nPackagesIn");
 		var nPackagesOut = document.getElementById("nPackagesOut");
 		var stationId = document.getElementById("stationId");
 		var destinationId = document.getElementById("destinationId");
@@ -56,9 +54,7 @@ function train2() {
 	$.getJSON('JSONAction.action', function(data) {
 		trains = data.trainList;
 		stations = data.stationList;
-		console.log(stations.sendPackageList);
 		
-		var nPackagesIn = document.getElementById("nPackagesIn");
 		var nPackagesOut = document.getElementById("nPackagesOut");
 		var stationId = document.getElementById("stationId");
 		var destinationId = document.getElementById("destinationId");
@@ -101,9 +97,7 @@ function train3() {
 	$.getJSON('JSONAction.action', function(data) {
 		trains = data.trainList;
 		stations = data.stationList;
-		console.log(stations.sendPackageList);
 		
-		var nPackagesIn = document.getElementById("nPackagesIn");
 		var nPackagesOut = document.getElementById("nPackagesOut");
 		var stationId = document.getElementById("stationId");
 		var destinationId = document.getElementById("destinationId");
@@ -146,9 +140,7 @@ function train4() {
 	$.getJSON('JSONAction.action', function(data) {
 		trains = data.trainList;
 		stations = data.stationList;
-		console.log(stations.sendPackageList);
 		
-		var nPackagesIn = document.getElementById("nPackagesIn");
 		var nPackagesOut = document.getElementById("nPackagesOut");
 		var stationId = document.getElementById("stationId");
 		var destinationId = document.getElementById("destinationId");
@@ -191,9 +183,7 @@ function train5() {
 	$.getJSON('JSONAction.action', function(data) {
 		trains = data.trainList;
 		stations = data.stationList;
-		console.log(stations.sendPackageList);
 		
-		var nPackagesIn = document.getElementById("nPackagesIn");
 		var nPackagesOut = document.getElementById("nPackagesOut");
 		var stationId = document.getElementById("stationId");
 		var destinationId = document.getElementById("destinationId");
@@ -236,9 +226,7 @@ function train6() {
 	$.getJSON('JSONAction.action', function(data) {
 		trains = data.trainList;
 		stations = data.stationList;
-		console.log(stations.sendPackageList);
 		
-		var nPackagesIn = document.getElementById("nPackagesIn");
 		var nPackagesOut = document.getElementById("nPackagesOut");
 		var stationId = document.getElementById("stationId");
 		var destinationId = document.getElementById("destinationId");

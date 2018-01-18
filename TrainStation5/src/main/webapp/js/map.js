@@ -118,7 +118,7 @@ function setMarkerTrainPosition() {
 														}));
 									}
 								});
-			}, 5000);
+			}, 10000);
 };
 function showAllTrainMarkers() {
 	for (var i = 0; i < trainMarkers.length; i++) {

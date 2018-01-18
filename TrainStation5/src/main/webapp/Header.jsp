@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<link rel="stylesheet" href="css/Header.css" />
 <header class="row">
 	<div class="col-md-5">
 		<figure class="row">
@@ -8,6 +9,8 @@
 		</figure>
 	</div>
 	<div class="col-md-7 col-md-offset-7">
-		<a href="Settings.jsp" style="float: right; margin-top: 20px;"> <img src="images/settings.png"></a>
+		<s:form action="settings" method="post" id="settings">
+			<s:submit type="image" method="execute" src="images/settings.png" align="center" id="submit"/>
+		</s:form>
 	</div>
 </header>
