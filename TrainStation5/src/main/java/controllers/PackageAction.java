@@ -59,7 +59,7 @@ public class PackageAction extends ActionSupport {
 
 	/**
 	 * Add the new package to the database.
-	 * @return SUCCESS
+	 * @return success
 	 */
 	public String add() {
 		try {
@@ -69,7 +69,7 @@ public class PackageAction extends ActionSupport {
 			e.printStackTrace();
 		}
 		this.packageList = packageDAO.list();
-		return SUCCESS;
+		return "success";
 	}
 
 	/**

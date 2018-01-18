@@ -15,48 +15,36 @@
 <script type="text/javascript" src="js/PHC.js"></script>
 </head>
 <body class="container">
-	<header class="row">
-		<div class="col-md-5">
-			<figure class="row">
-				<img src="images/Tren_Inicio.png" class="col-md-5">
-				<img src="images/Titulo_Inicio.png" class="col-md-7">
-			</figure>
-		</div>
-		<div class="col-md-7 col-md-offset-7">
-			<a href="Settings.jsp" style="float:right; margin-top: 20px;"> <img src="images/settings.png"> </a>
-		</div>
-	</header>
 	<nav>
-		<a href="SendPackage.jsp" class="btn btn-success">Send Package</a>
+		<a href="SendPackage.jsp" id="boton" class="btn btn-success">Send Package</a>
 		<a href="Login.jsp" id="logout" class="btn btn-danger">Log Out</a>
 	</nav>
 	<div class="row" id="mapaSection">
 		<div class="col-md-6" id="trainInfo">
 			<h2>Train information</h2>
-			<input id="train1" type="radio" name="train"
-				onclick="setTrainMarkerVisibility(1); loadTrain();" /><label
-				id="textTrain">Train1</label> <input id="train2" type="radio"
-				name="train" onclick="setTrainMarkerVisibility(2); loadTrain();" /><label
-				id="textTrain">Train2</label> <input id="train3" type="radio"
-				name="train" onclick="setTrainMarkerVisibility(3); loadTrain();" /><label
-				id="textTrain">Train3</label> <input id="train4" type="radio"
-				name="train" onclick="setTrainMarkerVisibility(4); loadTrain();" /><label
-				id="textTrain">Train4</label> <input id="train5" type="radio"
-				name="train" onclick="setTrainMarkerVisibility(5); loadTrain();" /><label
-				id="textTrain">Train5</label> <input id="train6" type="radio"
-				name="train" onclick="setTrainMarkerVisibility(6); loadTrain();" /><label
-				id="textTrain">Train6</label> <input id="trains" type="radio"
-				name="train" onclick="showAllTrainMarkers(); loadTrain();"
-				checked="checked" /><label id="textTrain">All trains</label><br>
+			<input id="train1" type="radio" name="train" onclick="setTrainMarkerVisibility(1); loadTrain();" />
+			<label id="textTrain">Train1</label>
+			<input id="train2" type="radio" name="train" onclick="setTrainMarkerVisibility(2); loadTrain();" />
+			<label id="textTrain">Train2</label>
+			<input id="train3" type="radio"	name="train" onclick="setTrainMarkerVisibility(3); loadTrain();" />
+			<label id="textTrain">Train3</label>
+			<input id="train4" type="radio" name="train" onclick="setTrainMarkerVisibility(4); loadTrain();" />
+			<label id="textTrain">Train4</label> 
+			<input id="train5" type="radio" name="train" onclick="setTrainMarkerVisibility(5); loadTrain();" />
+			<label id="textTrain">Train5</label>
+			<input id="train6" type="radio" name="train" onclick="setTrainMarkerVisibility(6); loadTrain();" />
+			<label id="textTrain">Train6</label>
+			<input id="trains" type="radio" name="train" onclick="showAllTrainMarkers(); loadTrain();" checked="checked" />
+			<label id="textTrain">All Trains</label><br>
 			<hr>
-			<label id="textStation" class="text">Station:</label><label
-				id="stationId" class="numbers"></label><br> <label
-				id="textRail" class="text">Rail track:</label><label id="railId"
-				class="numbers"></label><br> <label id="textDestination"
-				class="text">Destination:</label><label id="destinationId"
-				class="numbers"></label><br> <label id="textPackages"
-				class="text">Nº of packages:</label><label id="nPackages"
-				class="numbers"></label><br>
+			<label id="textStation" class="text">Station:</label>
+			<label id="stationId" class="numbers"></label><br>
+			<label id="textRail" class="text">Rail track:</label>
+			<label id="railId" class="numbers"></label><br>
+			<label id="textDestination"	class="text">Destination:</label>
+			<label id="destinationId" class="numbers"></label><br>
+			<label id="textPackages" class="text">Nº of packages:</label>
+			<label id="nPackages" class="numbers"></label><br>
 		</div>
 		<div class="col-md-6">
 			<div id="map"></div>

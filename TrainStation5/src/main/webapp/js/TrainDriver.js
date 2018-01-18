@@ -42,7 +42,8 @@ function train1() {
 		else {
 			stop.style.backgroundColor = "green";
 		}
-	})
+	}),
+	setInterval('train1()', 10000);
 }
 
 function train2() {
@@ -86,7 +87,8 @@ function train2() {
 		else {
 			stop.style.backgroundColor = "green";
 		}
-	})
+	}),
+	setInterval('train2()', 10000);
 }
 
 function train3() {
@@ -130,7 +132,8 @@ function train3() {
 		else {
 			stop.style.backgroundColor = "green";
 		}
-	})
+	}),
+	setInterval('train3()', 10000);
 }
 
 function train4() {
@@ -174,7 +177,8 @@ function train4() {
 		else {
 			stop.style.backgroundColor = "green";
 		}
-	})
+	}),
+	setInterval('train4()', 10000);
 }
 
 function train5() {
@@ -218,7 +222,8 @@ function train5() {
 		else {
 			stop.style.backgroundColor = "green";
 		}
-	})
+	}),
+	setInterval('train5()', 10000);
 }
 
 function train6() {
@@ -262,5 +267,6 @@ function train6() {
 		else {
 			stop.style.backgroundColor = "green";
 		}
-	})
+	}),
+	setInterval('train6()', 10000);
 }

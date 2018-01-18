@@ -14,17 +14,17 @@
 </head>
 <body class="container">
 	<header class="row">
-		<div class="col-md-5">
-			<figure class="row">
-				<img src="images/Tren_Inicio.png" class="col-md-5">
-				<img src="images/Titulo_Inicio.png" class="col-md-7">
-			</figure>
-		</div>
-		<div class="col-md-7 col-md-offset-7">
-			<a href="Settings.jsp" style="float:right; margin-top: 20px;"> <img src="images/settings.png"> </a>
-		</div>
-	</header>
-	<a href="PHC.jsp" class="btn btn-danger">Exit</a>
+	<div class="col-md-5">
+		<figure class="row">
+			<img src="images/Tren_Inicio.png" class="col-md-5">
+			<img src="images/Titulo_Inicio.png" class="col-md-7">
+		</figure>
+	</div>
+	<div class="col-md-7 col-md-offset-7">
+		<a href="Settings.jsp" style="float: right; margin-top: 20px;"> <img src="images/settings.png"></a>
+	</div>
+</header>
+	<a href="PHC.jsp" id="exit" class="btn btn-danger">Exit</a>
 	<div id="grafico">
 		<h1>Nº of packages per day</h1>
 		<div id="perDay"></div>
