@@ -44,13 +44,6 @@ public class LoginActionTest{
 		assertEquals(1, loginAction.getActionErrors().size());
 	}
 	
-	@Test
-	public void testIncorrectRole() {
-		loginAction.setUsername("xantileonet");
-		loginAction.setPassword("incorrect");
-		loginAction.execute();
-		assertEquals(1, loginAction.getActionErrors().size());
-	}
 	
 	@Test
 	public void testCorrectLoginPHC() {

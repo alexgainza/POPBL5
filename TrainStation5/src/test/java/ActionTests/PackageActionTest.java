@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.HashMap;
 import java.util.Locale;
 
+import org.hibernate.Session;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -12,6 +13,7 @@ import org.mockito.Mockito;
 import com.opensymphony.xwork2.ActionContext;
 
 import controllers.PackageAction;
+import hibernate.HibernateUtil;
 import paquete.Package;
 
 public class PackageActionTest {
@@ -36,5 +38,11 @@ public class PackageActionTest {
 	public void addPackageTest() {
 		packageAction.setPaquete(paquete);
 		assertEquals("success", packageAction.add());
+		
+		Session session = HibernateUtil.createSessionFactory();
+		session.beginTransaction();	
+		session.delete(paquete);
+		session.getTransaction().commit();
+		session.close();
 	}
 }
