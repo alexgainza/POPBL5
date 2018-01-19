@@ -11,11 +11,11 @@ import org.mockito.Mockito;
 import com.opensymphony.xwork2.ActionContext;
 
 import controllers.JSONAction;
-import controllers.PageAction;
 
 public class JSONActionTest {
 	ActionContext actionContext;
 	JSONAction JSONAction;
+	
 	@Before
 	public void setUp() {
 		actionContext = Mockito.mock(ActionContext.class);

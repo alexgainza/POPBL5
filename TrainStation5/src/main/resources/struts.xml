@@ -58,14 +58,5 @@
 		<action name="JSONActionTrain" class="controllers.JSONActionTrain">
 			<result type="json" />
 		</action>
-		<!--<action name="locale" class="controllers.LocaleAction">
-			<result name="SUCCESS">Login.jsp</result>
-		</action>-->
-		<action name="locale" class="controllers.LocaleAction">
-			<result name="success" type="redirectAction">
-				<param name="actionName">%{referer}</param>
-			</result>
-			<result name="LOGIN">Login.jsp</result>
-		</action>
 	</package>
 </struts>
