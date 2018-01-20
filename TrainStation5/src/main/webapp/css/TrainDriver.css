@@ -22,10 +22,10 @@ header {
 }
 
 #stop {
-	padding: 10 20;
+	padding: 10px 20px;
 }
 
 #logout {
 	margin-top: 20px;
-	float: right;
+	
 }

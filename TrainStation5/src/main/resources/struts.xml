@@ -50,7 +50,7 @@
 		</action>
 		<action name="editUser" class="controllers.UserAction" method="edit">
 			<result name="success">Login.jsp</result>
-			<result name="error">Settings.jsp</result>
+			<result name="error" type="tiles">/Settings</result>
 		</action>
 		<action name="JSONAction" class="controllers.JSONAction">
 			<result type="json" />
