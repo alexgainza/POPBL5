@@ -34,7 +34,7 @@ function loadTrain() {
 					railId.innerHTML = train[0].rail.railID;
 				}
 			}
-			nPackages.innerHTML = train[0].packageList.length
+			nPackages.innerHTML = train[0].packageList.length;
 		}
 
 		else if (document.getElementById('train2').checked) {

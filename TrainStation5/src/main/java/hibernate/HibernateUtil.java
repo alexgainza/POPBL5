@@ -26,7 +26,9 @@ public class HibernateUtil {
 	 * @return session.
 	 */
 	public static Session createSessionFactory() {
-		sessionFactory = new Configuration().configure().buildSessionFactory();
+		if(sessionFactory==null) {
+			sessionFactory = new Configuration().configure().buildSessionFactory();
+		}
 		session = sessionFactory.openSession();
 		return session;
 	}
